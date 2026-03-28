@@ -7,6 +7,9 @@ jobs:
   verify:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v3
 
@@ -31,16 +34,10 @@ jobs:
 
       - name: Run verify
         run: oj-verify run
-  build-docs:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
+
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Install oj-verify
-        run: pip install online-judge-verify-helper
       - name: Run oj-verify docs
         run: oj-verify docs
       - name: Deploy to GitHub Pages
