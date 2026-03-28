@@ -1,12 +1,11 @@
-name: docs
+name: verify
 
 on:
   push:
-    branches:
-      - main
+  pull_request:
 
 jobs:
-  docs:
+  verify:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,12 +17,18 @@ jobs:
       - name: Install tools
         run: |
           pip install online-judge-verify-helper
+          pip install online-judge-tools
 
-      - name: Generate docs
-        run: oj-verify docs
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./.docs
+          dotnet-version: '8.0.x'
+
+      - name: Install dotnet-script
+        run: dotnet tool install -g dotnet-script
+
+      - name: Add PATH
+        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+      - name: Run verify
+        run: oj-verify run
