@@ -1,6 +1,6 @@
+#load "../../library/data-structure/SegmentTree.csx"
 // verification-helper: PROBLEM https://judge.yosupo.jp/problem/point_add_range_sum
 
-#load "../../library/data-structure/SegmentTree.cs"
 
 string[] nq = Console.ReadLine().Split();
 int N = int.Parse(nq[0]);
