@@ -1,32 +1,22 @@
 name: docs
-
 on:
   push:
-    branches:
-      - master
-
-permissions:
-  contents: write
-
+    branches: [master]
 jobs:
-  docs:
+  build-docs:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
-
-      - name: Install tools
-        run: |
-          pip install online-judge-verify-helper
-
-      - name: Generate docs
+        with:
+          fetch-depth: 0
+      - name: Install oj-verify
+        run: pip install online-judge-verify-helper
+      - name: Run oj-verify docs
         run: oj-verify docs
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./.docs
+          publish_dir: .verify-helper/docs
