@@ -1,4 +1,4 @@
-#pragma PROBLEM https://judge.yosupo.jp/problem/point_add_range_sum
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/point_add_range_sum
 
 #load "../../library/data-structure/SegmentTree.cs"
 
