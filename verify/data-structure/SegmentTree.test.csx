@@ -1,31 +1,34 @@
 #load "../../library/data-structure/SegmentTree.csx"
+#load "../../library/utility/CPIO.csx"
 // verification-helper: PROBLEM https://judge.yosupo.jp/problem/point_add_range_sum
 
+global using System.Runtime.CompilerServices;
 
-string[] nq = Console.ReadLine().Split();
-int N = int.Parse(nq[0]);
-int Q = int.Parse(nq[1]);
+CPIO io = new();
+
+int N = io.Int();
+int Q = io.Int();
 
 var seg = new SegmentTree<long>(N, (x, y) => x + y, (x, y) => x + y, 0L);
-
-long[] arr = Console.ReadLine().Split().Select(x => long.Parse(x)).ToArray();
+long[] arr = io.LongArray(N);
 seg.Build(arr);
 
 while (Q-- > 0)
 {
-    var q = Console.ReadLine().Split();
-    int t = int.Parse(q[0]);
+    int t = io.Int();
 
     if (t == 0)
     {
-        int p = int.Parse(q[1]);
-        int x = int.Parse(q[2]);
+        int p = io.Int();
+        long x = io.Long();
         seg.Update(p, x);
     }
     else
     {
-        int l = int.Parse(q[1]);
-        int r = int.Parse(q[2]);
-        Console.WriteLine(seg.Fold(l, r));
+        int l = io.Int();
+        int r = io.Int();
+        io.Print(seg.Fold(l, r));
     }
 }
+
+Console.Out.Flush();
