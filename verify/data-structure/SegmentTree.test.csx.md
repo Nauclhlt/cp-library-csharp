@@ -19,22 +19,21 @@ data:
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
     \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/csharpscript.py\"\
     , line 113, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
-  code: "#load \"../../library/data-structure/SegmentTree.csx\"\n// verification-helper:\
-    \ PROBLEM https://judge.yosupo.jp/problem/point_add_range_sum\n\n\nstring[] nq\
-    \ = Console.ReadLine().Split();\nint N = int.Parse(nq[0]);\nint Q = int.Parse(nq[1]);\n\
-    \nvar seg = new SegmentTree<long>(N, (x, y) => x + y, (x, y) => x + y, 0L);\n\n\
-    long[] arr = Console.ReadLine().Split().Select(x => long.Parse(x)).ToArray();\n\
-    seg.Build(arr);\n\nwhile (Q-- > 0)\n{\n    var q = Console.ReadLine().Split();\n\
-    \    int t = int.Parse(q[0]);\n\n    if (t == 0)\n    {\n        int p = int.Parse(q[1]);\n\
-    \        int x = int.Parse(q[2]);\n        seg.Update(p, x);\n    }\n    else\n\
-    \    {\n        int l = int.Parse(q[1]);\n        int r = int.Parse(q[2]);\n \
-    \       Console.WriteLine(seg.Fold(l, r));\n    }\n}"
+  code: "#load \"../../library/data-structure/SegmentTree.csx\"\n#load \"../../library/utility/CPIO.csx\"\
+    \n// verification-helper: PROBLEM https://judge.yosupo.jp/problem/point_add_range_sum\n\
+    \nglobal using System.Runtime.CompilerServices;\n\nCPIO io = new();\n\nint N =\
+    \ io.Int();\nint Q = io.Int();\n\nvar seg = new SegmentTree<long>(N, (x, y) =>\
+    \ x + y, (x, y) => x + y, 0L);\nlong[] arr = io.LongArray(N);\nseg.Build(arr);\n\
+    \nwhile (Q-- > 0)\n{\n    int t = io.Int();\n\n    if (t == 0)\n    {\n      \
+    \  int p = io.Int();\n        long x = io.Long();\n        seg.Update(p, x);\n\
+    \    }\n    else\n    {\n        int l = io.Int();\n        int r = io.Int();\n\
+    \        io.Print(seg.Fold(l, r));\n    }\n}\n\nConsole.Out.Flush();"
   dependsOn:
   - library/data-structure/SegmentTree.csx
   isVerificationFile: true
   path: verify/data-structure/SegmentTree.test.csx
   requiredBy: []
-  timestamp: '2026-03-29 20:16:24+09:00'
+  timestamp: '2026-03-29 21:55:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/SegmentTree.test.csx

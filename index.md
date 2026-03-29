@@ -6,6 +6,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structure/SegmentTree.csx
       title: Segment Tree
+  - name: library/utility
+    pages:
+    - icon: ':warning:'
+      path: library/utility/CPIO.csx
+      title: CPIO
   verificationCategories:
   - name: verify/data-structure
     pages:
