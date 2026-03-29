@@ -1,5 +1,3 @@
-// @title Segment Tree
-
 /// <summary>
 /// Segment tree. (Non-recursive, compatible for non-commutative monoid)
 /// </summary>
