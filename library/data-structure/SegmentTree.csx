@@ -1,5 +1,5 @@
 /// <summary>
-/// Segment tree. (Non-recursive, compatible for non-commutative monoid)
+/// Segment tree. (Non-recursive, can be used with non-commutative monoid)
 /// </summary>
 /// <typeparam name="T">Type of values.</typeparam>
 public sealed class SegmentTree<T> where T : struct
