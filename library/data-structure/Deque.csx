@@ -61,22 +61,14 @@ public sealed class Deque<T> : IEnumerable<T>
     /// </summary>
     public void PushFront(T value)
     {
-        if (_length == 0)
+        if (_head == 0)
         {
-            _length++;
-            _buffer[_head] = value;
+            ResizeBuffer();
         }
-        else
-        {
-            if (_head == 0)
-            {
-                ResizeBuffer();
-            }
 
-            _head--;
-            _buffer[_head] = value;
-            _length++;
-        }
+        _head--;
+        _buffer[_head] = value;
+        _length++;
     }
 
     /// <summary>
