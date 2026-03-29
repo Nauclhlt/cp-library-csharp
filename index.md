@@ -8,7 +8,7 @@ data:
       title: Segment Tree
   - name: library/utility
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/utility/CPIO.csx
       title: CPIO
   verificationCategories:
@@ -17,6 +17,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/SegmentTree.test.csx
       title: verify/data-structure/SegmentTree.test.csx
+  - name: verify/utility
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/utility/CPIO.test.csx
+      title: verify/utility/CPIO.test.csx
 layout: toppage
 ---
 競技プログラミング用C#ライブラリです.

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/utility/CPIO.test.csx
+    title: verify/utility/CPIO.test.csx
   _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -78,8 +81,9 @@ data:
   path: library/utility/CPIO.csx
   requiredBy: []
   timestamp: '2026-03-29 21:55:43+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/utility/CPIO.test.csx
 documentation_of: library/utility/CPIO.csx
 layout: document
 title: CPIO
@@ -111,6 +115,6 @@ title: CPIO
 - `StringArray(n)`: 長さ $n$ の文字列配列を受け取る
 - `ReadArray<T>(n)`: 長さ $n$ の $T$ 型配列を受け取る
 - `YesNo(t)`: $t$ の真偽に応じて `Yes` または `No` を出力する
-- `Print<T>(array, delimiter)`: $T$ 型配列 $array$ の要素を $delimiter$ 区切りで出力する
+- `Print<T>(array, delimiter)`: $T$ 型の列挙可能型 $array$ の要素を $delimiter$ 区切りで出力する
 - `Print(value)`: $value$ を出力する
 - `Print(value, digits)`: double型の $value$ を小数点以下 $digits$ まで(それ以下があればroundして)出力する
