@@ -29,6 +29,6 @@ documentation_of: //library/utility/CPIO.csx
 - `StringArray(n)`: 長さ $n$ の文字列配列を受け取る
 - `ReadArray<T>(n)`: 長さ $n$ の $T$ 型配列を受け取る
 - `YesNo(t)`: $t$ の真偽に応じて `Yes` または `No` を出力する
-- `Print<T>(array, delimiter)`: $T$ 型配列 $array$ の要素を $delimiter$ 区切りで出力する
+- `Print<T>(array, delimiter)`: $T$ 型の列挙可能型 $array$ の要素を $delimiter$ 区切りで出力する
 - `Print(value)`: $value$ を出力する
 - `Print(value, digits)`: double型の $value$ を小数点以下 $digits$ まで(それ以下があればroundして)出力する
