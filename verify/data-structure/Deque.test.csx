@@ -3,6 +3,9 @@
 // verification-helper: PROBLEM https://judge.yosupo.jp/problem/deque
 
 global using System.Runtime.CompilerServices;
+global using System.Collections;
+
+CPIO io = new();
 
 int Q = io.Int();
 
