@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/data-structure/SegmentTree.csx
-    title: library/data-structure/SegmentTree.csx
+    title: Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -34,7 +34,7 @@ data:
   isVerificationFile: true
   path: verify/data-structure/SegmentTree.test.csx
   requiredBy: []
-  timestamp: '2026-03-29 01:28:06+09:00'
+  timestamp: '2026-03-29 20:16:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/SegmentTree.test.csx
