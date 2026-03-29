@@ -14,3 +14,6 @@ data:
       title: verify/data-structure/SegmentTree.test.csx
 layout: toppage
 ---
+競技プログラミング用C#ライブラリです.
+
+.NET 10.0以上では問題なく動くと思います. おそらくそれより前のバージョンでも古くなければ動きます.
