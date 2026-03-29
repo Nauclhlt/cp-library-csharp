@@ -33,7 +33,7 @@ data:
   isVerificationFile: true
   path: verify/data-structure/SegmentTree.test.csx
   requiredBy: []
-  timestamp: '2026-03-29 21:55:43+09:00'
+  timestamp: '2026-03-30 01:34:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/SegmentTree.test.csx

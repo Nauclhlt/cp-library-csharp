@@ -4,6 +4,9 @@ data:
   - name: library/data-structure
     pages:
     - icon: ':heavy_check_mark:'
+      path: library/data-structure/Deque.csx
+      title: Deque
+    - icon: ':heavy_check_mark:'
       path: library/data-structure/SegmentTree.csx
       title: Segment Tree
   - name: library/utility
@@ -14,6 +17,9 @@ data:
   verificationCategories:
   - name: verify/data-structure
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/data-structure/Deque.test.csx
+      title: verify/data-structure/Deque.test.csx
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/SegmentTree.test.csx
       title: verify/data-structure/SegmentTree.test.csx

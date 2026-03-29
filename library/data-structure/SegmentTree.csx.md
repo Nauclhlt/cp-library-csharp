@@ -17,7 +17,7 @@ data:
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
     \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/csharpscript.py\"\
     , line 113, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
-  code: "/// <summary>\n/// Segment tree. (Non-recursive, compatible for non-commutative\
+  code: "/// <summary>\n/// Segment tree. (Non-recursive, can be used with non-commutative\
     \ monoid)\n/// </summary>\n/// <typeparam name=\"T\">Type of values.</typeparam>\n\
     public sealed class SegmentTree<T> where T : struct\n{\n    public delegate T\
     \ Monoid(T x, T y);\n\n    private int _treeSize;\n    private int _dataSize;\n\
@@ -74,7 +74,7 @@ data:
   isVerificationFile: false
   path: library/data-structure/SegmentTree.csx
   requiredBy: []
-  timestamp: '2026-03-29 20:16:24+09:00'
+  timestamp: '2026-03-30 01:34:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data-structure/SegmentTree.test.csx
