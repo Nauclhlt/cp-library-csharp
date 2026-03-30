@@ -1,0 +1,13 @@
+#load "../../library/utility/CPIO.csx"
+#load "../../library/math/ModInt.csx"
+// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
+
+global using System.Runtime.CompilerServices;
+
+CPIO io = new();
+
+long m = io.Long();
+long n = io.Long();
+
+ModInt<Mod1000000007> modint = m;
+io.Print(modint.Power(n).Value);
