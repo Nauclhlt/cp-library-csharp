@@ -1,6 +1,6 @@
 ---
-title: Sparse Table
-documentation_of: //library/data-structure/SparseTable.csx
+title: ModInt
+documentation_of: //library/data-structure/ModInt.csx
 ---
 
 #### 説明
