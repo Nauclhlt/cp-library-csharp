@@ -6,6 +6,7 @@ global using System.Collections;
 global using System.Runtime.CompilerServices;
 global using System.Numerics;
 global using System.Diagnostics.CodeAnalysis;
+global using System.Globalization;
 
 CPIO io = new();
 
@@ -14,3 +15,5 @@ long n = io.Long();
 
 ModInt<Mod1000000007> modint = m;
 io.Print(modint.Power(n).Value);
+
+Console.Out.Flush();
