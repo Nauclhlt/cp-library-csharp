@@ -26,7 +26,13 @@ data:
     // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
 
 
+    global using System.Collections;
+
     global using System.Runtime.CompilerServices;
+
+    global using System.Numerics;
+
+    global using System.Diagnostics.CodeAnalysis;
 
 
     CPIO io = new();
@@ -45,7 +51,7 @@ data:
   isVerificationFile: true
   path: verify/math/ModInt.test.csx
   requiredBy: []
-  timestamp: '2026-03-30 14:27:54+09:00'
+  timestamp: '2026-03-30 14:34:46+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/math/ModInt.test.csx
