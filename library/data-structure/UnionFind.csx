@@ -65,7 +65,7 @@ public sealed class UnionFind
     /// <summary>
     /// Gets the list of vertices which belong to the connected component of x. Time complexity is O(n).
     /// </summary>
-    public List<int> Find(int x)
+    public List<int> GetGroup(int x)
     {
         int rootX = Leader(x);
         List<int> set = new List<int>();

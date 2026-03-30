@@ -8,7 +8,7 @@ CPIO io = new();
 int N = io.Int();
 int Q = io.Int();
 
-int[] a = io.LongArray(N);
+long[] a = io.LongArray(N);
 
 SparseTable<long> table = new(a, long.MaxValue, long.Min);
 
