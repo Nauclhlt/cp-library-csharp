@@ -2,7 +2,10 @@
 #load "../../library/math/ModInt.csx"
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
 
+global using System.Collections;
 global using System.Runtime.CompilerServices;
+global using System.Numerics;
+global using System.Diagnostics.CodeAnalysis;
 
 CPIO io = new();
 
