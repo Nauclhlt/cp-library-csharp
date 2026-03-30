@@ -9,7 +9,7 @@ CPIO io = new();
 int N = io.Int();
 int Q = io.Int();
 
-UnionFind uf = new(Q);
+UnionFind uf = new(N);
 
 while (Q-- > 0)
 {

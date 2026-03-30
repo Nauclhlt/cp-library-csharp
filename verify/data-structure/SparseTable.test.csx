@@ -1,5 +1,6 @@
 #load "../../library/data-structure/SparseTable.csx"
 #load "../../library/utility/CPIO.csx"
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/staticrmq
 
 global using System.Runtime.CompilerServices;
 
