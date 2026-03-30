@@ -17,40 +17,41 @@ data:
     \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/csharpscript.py\"\
     , line 113, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "/// <summary>\n/// Double-Ended Queue implementation. Supports push/pop to\
-    \ the front and back, and random access.\n/// </summary>\n/// <typeparam name=\"\
-    T\">Value type.</typeparam>\npublic sealed class Deque<T> : IEnumerable<T>\n{\n\
-    \    private const int DefaultCapacity = 32;\n\n    private T[] _buffer;\n   \
-    \ private int _capacity;\n\n    private int _head;\n    private int _length;\n\
-    \n    public int Count => _length;\n    public int Capacity => _capacity;\n  \
-    \  \n    public T this[int index]\n    {\n        get {\n            if (index\
-    \ < 0 || index >= _length) throw new IndexOutOfRangeException(\"The specified\
-    \ index is out of the bounds of the deque.\");\n            return _buffer[_head\
-    \ + index];\n        }\n        set {\n            if (index < 0 || index >= _length)\
-    \ throw new IndexOutOfRangeException(\"The specified index is out of the bounds\
-    \ of the deque.\");\n            _buffer[_head + index] = value;\n        }\n\
-    \    }\n\n    public Deque() : this(DefaultCapacity)\n    {\n    }\n\n    public\
-    \ Deque(int capacity)\n    {\n        if (capacity < 0)\n        {\n         \
-    \   throw new ArgumentException(\"The capacity must be greater than 0.\");\n \
-    \       }\n\n        _capacity = capacity;\n        _buffer = new T[_capacity];\n\
-    \        _head = _capacity / 2;\n        _length = 0;\n    }\n\n    private void\
-    \ ResizeBuffer()\n    {\n        _capacity <<= 1;\n\n        T[] newBuffer = new\
-    \ T[_capacity];\n        int newHead = (_capacity - _length) / 2;\n        Array.Copy(_buffer,\
-    \ _head, newBuffer, newHead, _length);\n\n        _head = newHead;\n        _buffer\
-    \ = newBuffer;\n    }\n\n    /// <summary>\n    /// Push the value to the front.\
-    \ Time complexity is amortized O(1).\n    /// </summary>\n    public void PushFront(T\
-    \ value)\n    {\n        if (_head == 0)\n        {\n            ResizeBuffer();\n\
-    \        }\n\n        _head--;\n        _buffer[_head] = value;\n        _length++;\n\
-    \    }\n\n    /// <summary>\n    /// Push the value to the back. Time complexity\
-    \ is amortized O(1).\n    /// </summary>\n    public void PushBack(T value)\n\
-    \    {\n        if (_head + _length >= _capacity)\n        {\n            ResizeBuffer();\n\
-    \        }\n\n        _buffer[_head + _length] = value;\n        _length++;\n\
-    \    }\n\n    /// <summary>\n    /// Pop the front item. Time complexity is O(1).\n\
-    \    /// </summary>\n    public T PopFront()\n    {\n        if (_length == 0)\n\
-    \        {\n            throw new InvalidOperationException(\"Deque is empty.\"\
-    );\n        }\n\n        T front = _buffer[_head];\n        _head++;\n       \
-    \ _length--;\n\n        return front;\n    }\n\n    /// <summary>\n    /// Pop\
-    \ the back value. Time complexity is O(1).\n    /// </summary>\n    public T PopBack()\n\
-    \    {\n        if (_length == 0)\n        {\n            throw new InvalidOperationException(\"\
+    \ the front and back, and random access.\n/// </summary>\n/// <remarks>@author\
+    \ nauclhlt.</remarks>\n/// <typeparam name=\"T\">Value type.</typeparam>\npublic\
+    \ sealed class Deque<T> : IEnumerable<T>\n{\n    private const int DefaultCapacity\
+    \ = 32;\n\n    private T[] _buffer;\n    private int _capacity;\n\n    private\
+    \ int _head;\n    private int _length;\n\n    public int Count => _length;\n \
+    \   public int Capacity => _capacity;\n    \n    public T this[int index]\n  \
+    \  {\n        get {\n            if (index < 0 || index >= _length) throw new\
+    \ IndexOutOfRangeException(\"The specified index is out of the bounds of the deque.\"\
+    );\n            return _buffer[_head + index];\n        }\n        set {\n   \
+    \         if (index < 0 || index >= _length) throw new IndexOutOfRangeException(\"\
+    The specified index is out of the bounds of the deque.\");\n            _buffer[_head\
+    \ + index] = value;\n        }\n    }\n\n    public Deque() : this(DefaultCapacity)\n\
+    \    {\n    }\n\n    public Deque(int capacity)\n    {\n        if (capacity <\
+    \ 0)\n        {\n            throw new ArgumentException(\"The capacity must be\
+    \ greater than 0.\");\n        }\n\n        _capacity = capacity;\n        _buffer\
+    \ = new T[_capacity];\n        _head = _capacity / 2;\n        _length = 0;\n\
+    \    }\n\n    private void ResizeBuffer()\n    {\n        _capacity <<= 1;\n\n\
+    \        T[] newBuffer = new T[_capacity];\n        int newHead = (_capacity -\
+    \ _length) / 2;\n        Array.Copy(_buffer, _head, newBuffer, newHead, _length);\n\
+    \n        _head = newHead;\n        _buffer = newBuffer;\n    }\n\n    /// <summary>\n\
+    \    /// Push the value to the front. Time complexity is amortized O(1).\n   \
+    \ /// </summary>\n    public void PushFront(T value)\n    {\n        if (_head\
+    \ == 0)\n        {\n            ResizeBuffer();\n        }\n\n        _head--;\n\
+    \        _buffer[_head] = value;\n        _length++;\n    }\n\n    /// <summary>\n\
+    \    /// Push the value to the back. Time complexity is amortized O(1).\n    ///\
+    \ </summary>\n    public void PushBack(T value)\n    {\n        if (_head + _length\
+    \ >= _capacity)\n        {\n            ResizeBuffer();\n        }\n\n       \
+    \ _buffer[_head + _length] = value;\n        _length++;\n    }\n\n    /// <summary>\n\
+    \    /// Pop the front item. Time complexity is O(1).\n    /// </summary>\n  \
+    \  public T PopFront()\n    {\n        if (_length == 0)\n        {\n        \
+    \    throw new InvalidOperationException(\"Deque is empty.\");\n        }\n\n\
+    \        T front = _buffer[_head];\n        _head++;\n        _length--;\n\n \
+    \       return front;\n    }\n\n    /// <summary>\n    /// Pop the back value.\
+    \ Time complexity is O(1).\n    /// </summary>\n    public T PopBack()\n    {\n\
+    \        if (_length == 0)\n        {\n            throw new InvalidOperationException(\"\
     Deque is empty.\");\n        }\n\n        T back = _buffer[_head + _length - 1];\n\
     \        _length--;\n\n        return back;\n    }\n\n    /// <summary>\n    ///\
     \ Returns the front value. Time complexity is O(1).\n    /// </summary>\n    public\
@@ -80,7 +81,7 @@ data:
   isVerificationFile: false
   path: library/data-structure/Deque.csx
   requiredBy: []
-  timestamp: '2026-03-30 02:29:29+09:00'
+  timestamp: '2026-03-30 11:41:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data-structure/Deque.test.csx

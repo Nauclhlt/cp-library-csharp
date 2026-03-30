@@ -9,9 +9,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structure/SegmentTree.csx
       title: Segment Tree
+    - icon: ':x:'
+      path: library/data-structure/SparseTable.csx
+      title: Sparse Table
+    - icon: ':warning:'
+      path: library/data-structure/UnionFind.csx
+      title: Union-Find
   - name: library/utility
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/utility/CPIO.csx
       title: CPIO
   verificationCategories:
@@ -23,6 +29,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/SegmentTree.test.csx
       title: verify/data-structure/SegmentTree.test.csx
+    - icon: ':x:'
+      path: verify/data-structure/SparseTable.test.csx
+      title: verify/data-structure/SparseTable.test.csx
+    - icon: ':x:'
+      path: verify/data-structure/UnionFind.test.csx
+      title: verify/data-structure/UnionFind.test.csx
   - name: verify/utility
     pages:
     - icon: ':heavy_check_mark:'

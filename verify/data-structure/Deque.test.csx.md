@@ -34,7 +34,7 @@ data:
   isVerificationFile: true
   path: verify/data-structure/Deque.test.csx
   requiredBy: []
-  timestamp: '2026-03-30 02:29:29+09:00'
+  timestamp: '2026-03-30 11:41:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/Deque.test.csx
