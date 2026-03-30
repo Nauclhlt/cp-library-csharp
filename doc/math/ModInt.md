@@ -1,6 +1,6 @@
 ---
 title: ModInt
-documentation_of: //library/data-structure/ModInt.csx
+documentation_of: //library/math/ModInt.csx
 ---
 
 #### 説明
