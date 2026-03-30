@@ -9,7 +9,8 @@ data:
   _isVerificationFailed: true
   _pathExtension: csx
   _verificationStatusIcon: ':x:'
-  attributes: {}
+  attributes:
+    links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -18,7 +19,7 @@ data:
     , line 113, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "#load \"../../library/data-structure/SparseTable.csx\"\n#load \"../../library/utility/CPIO.csx\"\
     \n\nglobal using System.Runtime.CompilerServices;\n\nCPIO io = new();\n\nint N\
-    \ = io.Int();\nint Q = io.Int();\n\nint[] a = io.LongArray(N);\n\nSparseTable<long>\
+    \ = io.Int();\nint Q = io.Int();\n\nlong[] a = io.LongArray(N);\n\nSparseTable<long>\
     \ table = new(a, long.MaxValue, long.Min);\n\nwhile (Q-- > 0)\n{\n    int l =\
     \ io.Int();\n    int r = io.Int();\n\n    io.Print(table.Fold(l, r));\n}\n\nConsole.Out.Flush();"
   dependsOn:
@@ -26,7 +27,7 @@ data:
   isVerificationFile: true
   path: verify/data-structure/SparseTable.test.csx
   requiredBy: []
-  timestamp: '2026-03-30 11:41:30+09:00'
+  timestamp: '2026-03-30 11:52:28+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/data-structure/SparseTable.test.csx
