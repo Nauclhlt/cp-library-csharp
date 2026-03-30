@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/data-structure/UnionFind.test.csx
     title: verify/data-structure/UnionFind.test.csx
   - icon: ':heavy_check_mark:'
     path: verify/utility/CPIO.test.csx
     title: verify/utility/CPIO.test.csx
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -84,7 +84,7 @@ data:
   path: library/utility/CPIO.csx
   requiredBy: []
   timestamp: '2026-03-29 21:55:43+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/utility/CPIO.test.csx
   - verify/data-structure/UnionFind.test.csx

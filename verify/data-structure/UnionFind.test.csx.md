@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/utility/CPIO.csx
     title: CPIO
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
     links:
@@ -22,7 +22,7 @@ data:
   code: "#load \"../../library/utility/CPIO.csx\"\n#load \"../../library/data-structure/UnionFind.csx\"\
     \n// verification-helper: PROBLEM https://judge.yosupo.jp/problem/unionfind\n\n\
     global using System.Runtime.CompilerServices;\n\nCPIO io = new();\n\nint N = io.Int();\n\
-    int Q = io.Int();\n\nUnionFind uf = new(Q);\n\nwhile (Q-- > 0)\n{\n    int t =\
+    int Q = io.Int();\n\nUnionFind uf = new(N);\n\nwhile (Q-- > 0)\n{\n    int t =\
     \ io.Int();\n    int u = io.Int();\n    int v = io.Int();\n\n    if (t == 0)\n\
     \    {\n        uf.Unite(u, v);\n    }\n    else if (t == 1)\n    {\n        if\
     \ (uf.Same(u, v)) io.Print(1);\n        else io.Print(0);\n    }\n}\n\nConsole.Out.Flush();"
@@ -31,8 +31,8 @@ data:
   isVerificationFile: true
   path: verify/data-structure/UnionFind.test.csx
   requiredBy: []
-  timestamp: '2026-03-30 11:41:30+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2026-03-30 12:01:12+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/UnionFind.test.csx
 layout: document
