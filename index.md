@@ -22,7 +22,7 @@ data:
       title: library/math/ModInt.csx
   - name: library/utility
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/utility/CPIO.csx
       title: CPIO
   verificationCategories:
@@ -42,7 +42,7 @@ data:
       title: verify/data-structure/UnionFind.test.csx
   - name: verify/math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/math/ModInt.test.csx
       title: verify/math/ModInt.test.csx
   - name: verify/utility

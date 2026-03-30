@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/utility/CPIO.csx
     title: CPIO
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
     links:
@@ -34,6 +34,8 @@ data:
 
     global using System.Diagnostics.CodeAnalysis;
 
+    global using System.Globalization;
+
 
     CPIO io = new();
 
@@ -45,14 +47,17 @@ data:
 
     ModInt<Mod1000000007> modint = m;
 
-    io.Print(modint.Power(n).Value);'
+    io.Print(modint.Power(n).Value);
+
+
+    Console.Out.Flush();'
   dependsOn:
   - library/utility/CPIO.csx
   isVerificationFile: true
   path: verify/math/ModInt.test.csx
   requiredBy: []
-  timestamp: '2026-03-30 14:34:46+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2026-03-30 14:43:54+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/math/ModInt.test.csx
 layout: document
