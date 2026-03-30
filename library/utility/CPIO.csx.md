@@ -6,12 +6,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/data-structure/UnionFind.test.csx
     title: verify/data-structure/UnionFind.test.csx
+  - icon: ':x:'
+    path: verify/math/ModInt.test.csx
+    title: verify/math/ModInt.test.csx
   - icon: ':heavy_check_mark:'
     path: verify/utility/CPIO.test.csx
     title: verify/utility/CPIO.test.csx
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: csx
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -84,10 +87,11 @@ data:
   path: library/utility/CPIO.csx
   requiredBy: []
   timestamp: '2026-03-29 21:55:43+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/utility/CPIO.test.csx
   - verify/data-structure/UnionFind.test.csx
+  - verify/math/ModInt.test.csx
 documentation_of: library/utility/CPIO.csx
 layout: document
 title: CPIO

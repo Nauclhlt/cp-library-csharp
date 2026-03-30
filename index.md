@@ -15,9 +15,14 @@ data:
     - icon: ':warning:'
       path: library/data-structure/UnionFind.csx
       title: Union-Find
+  - name: library/math
+    pages:
+    - icon: ':warning:'
+      path: library/math/ModInt.csx
+      title: library/math/ModInt.csx
   - name: library/utility
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/utility/CPIO.csx
       title: CPIO
   verificationCategories:
@@ -35,6 +40,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/UnionFind.test.csx
       title: verify/data-structure/UnionFind.test.csx
+  - name: verify/math
+    pages:
+    - icon: ':x:'
+      path: verify/math/ModInt.test.csx
+      title: verify/math/ModInt.test.csx
   - name: verify/utility
     pages:
     - icon: ':heavy_check_mark:'
