@@ -1,6 +1,7 @@
 /// <summary>
 /// Double-Ended Queue implementation. Supports push/pop to the front and back, and random access.
 /// </summary>
+/// <remarks>@author nauclhlt.</remarks>
 /// <typeparam name="T">Value type.</typeparam>
 public sealed class Deque<T> : IEnumerable<T>
 {
