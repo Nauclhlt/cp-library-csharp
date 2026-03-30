@@ -19,7 +19,7 @@ data:
     pages:
     - icon: ':warning:'
       path: library/math/ModInt.csx
-      title: library/math/ModInt.csx
+      title: ModInt
   - name: library/utility
     pages:
     - icon: ':heavy_check_mark:'
