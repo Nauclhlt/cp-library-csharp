@@ -1,5 +1,5 @@
-#load "../../library/utility/CPIO.csx"
 #load "../../library/math/ModInt.csx"
+#load "../../library/utility/CPIO.csx"
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
 
 global using System.Collections;
