@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structure/Deque.csx
       title: Deque
+    - icon: ':x:'
+      path: library/data-structure/FenwickTree.csx
+      title: library/data-structure/FenwickTree.csx
     - icon: ':heavy_check_mark:'
       path: library/data-structure/SegmentTree.csx
       title: Segment Tree
@@ -31,6 +34,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/Deque.test.csx
       title: verify/data-structure/Deque.test.csx
+    - icon: ':x:'
+      path: verify/data-structure/FenwickTree.test.csx
+      title: verify/data-structure/FenwickTree.test.csx
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/SegmentTree.test.csx
       title: verify/data-structure/SegmentTree.test.csx
