@@ -8,7 +8,7 @@ data:
       title: Deque
     - icon: ':heavy_check_mark:'
       path: library/data-structure/FenwickTree.csx
-      title: library/data-structure/FenwickTree.csx
+      title: Fenwick Tree
     - icon: ':heavy_check_mark:'
       path: library/data-structure/SegmentTree.csx
       title: Segment Tree
