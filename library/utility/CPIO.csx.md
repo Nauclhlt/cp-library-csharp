@@ -4,9 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/data-structure/UnionFind.test.csx
-    title: verify/data-structure/UnionFind.test.csx
-  - icon: ':heavy_check_mark:'
     path: verify/math/ModInt.test.csx
     title: verify/math/ModInt.test.csx
   - icon: ':heavy_check_mark:'
@@ -90,7 +87,6 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/utility/CPIO.test.csx
-  - verify/data-structure/UnionFind.test.csx
   - verify/math/ModInt.test.csx
 documentation_of: library/utility/CPIO.csx
 layout: document

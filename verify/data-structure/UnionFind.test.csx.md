@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: library/utility/CPIO.csx
-    title: CPIO
+    path: library/data-structure/UnionFind.csx
+    title: Union-Find
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,7 +19,7 @@ data:
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
     \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/csharpscript.py\"\
     , line 113, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
-  code: "#load \"../../library/utility/CPIO.csx\"\n#load \"../../library/data-structure/UnionFind.csx\"\
+  code: "#load \"../../library/data-structure/UnionFind.csx\"\n#load \"../../library/utility/CPIO.csx\"\
     \n// verification-helper: PROBLEM https://judge.yosupo.jp/problem/unionfind\n\n\
     global using System.Runtime.CompilerServices;\n\nCPIO io = new();\n\nint N = io.Int();\n\
     int Q = io.Int();\n\nUnionFind uf = new(N);\n\nwhile (Q-- > 0)\n{\n    int t =\
@@ -27,11 +27,11 @@ data:
     \    {\n        uf.Unite(u, v);\n    }\n    else if (t == 1)\n    {\n        if\
     \ (uf.Same(u, v)) io.Print(1);\n        else io.Print(0);\n    }\n}\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/utility/CPIO.csx
+  - library/data-structure/UnionFind.csx
   isVerificationFile: true
   path: verify/data-structure/UnionFind.test.csx
   requiredBy: []
-  timestamp: '2026-03-30 12:01:12+09:00'
+  timestamp: '2026-04-05 20:44:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/UnionFind.test.csx

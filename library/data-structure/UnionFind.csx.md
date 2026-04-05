@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/data-structure/UnionFind.test.csx
+    title: verify/data-structure/UnionFind.test.csx
   _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -59,8 +62,9 @@ data:
   path: library/data-structure/UnionFind.csx
   requiredBy: []
   timestamp: '2026-03-30 11:52:28+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/data-structure/UnionFind.test.csx
 documentation_of: library/data-structure/UnionFind.csx
 layout: document
 title: Union-Find

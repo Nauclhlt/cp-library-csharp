@@ -15,7 +15,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structure/SparseTable.csx
       title: Sparse Table
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structure/UnionFind.csx
       title: Union-Find
   - name: library/math
