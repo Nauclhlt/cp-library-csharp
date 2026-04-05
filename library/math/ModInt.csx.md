@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/math/ModInt.test.csx
+    title: verify/math/ModInt.test.csx
   _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -176,8 +179,9 @@ data:
   path: library/math/ModInt.csx
   requiredBy: []
   timestamp: '2026-03-30 14:27:54+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/math/ModInt.test.csx
 documentation_of: library/math/ModInt.csx
 layout: document
 title: ModInt

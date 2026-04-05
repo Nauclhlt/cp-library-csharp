@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: library/utility/CPIO.csx
-    title: CPIO
+    path: library/math/ModInt.csx
+    title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,9 +19,9 @@ data:
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
     \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/csharpscript.py\"\
     , line 113, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
-  code: '#load "../../library/utility/CPIO.csx"
+  code: '#load "../../library/math/ModInt.csx"
 
-    #load "../../library/math/ModInt.csx"
+    #load "../../library/utility/CPIO.csx"
 
     // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
 
@@ -52,11 +52,11 @@ data:
 
     Console.Out.Flush();'
   dependsOn:
-  - library/utility/CPIO.csx
+  - library/math/ModInt.csx
   isVerificationFile: true
   path: verify/math/ModInt.test.csx
   requiredBy: []
-  timestamp: '2026-03-30 14:43:54+09:00'
+  timestamp: '2026-04-05 21:22:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/math/ModInt.test.csx

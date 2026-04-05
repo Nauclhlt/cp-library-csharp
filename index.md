@@ -20,7 +20,7 @@ data:
       title: Union-Find
   - name: library/math
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/math/ModInt.csx
       title: ModInt
   - name: library/utility
