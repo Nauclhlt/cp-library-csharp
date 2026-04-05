@@ -1,5 +1,5 @@
-#load "../../library/utility/CPIO.csx"
 #load "../../library/data-structure/UnionFind.csx"
+#load "../../library/utility/CPIO.csx"
 // verification-helper: PROBLEM https://judge.yosupo.jp/problem/unionfind
 
 global using System.Runtime.CompilerServices;
