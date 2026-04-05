@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structure/Deque.csx
       title: Deque
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structure/FenwickTree.csx
       title: library/data-structure/FenwickTree.csx
     - icon: ':heavy_check_mark:'
@@ -34,7 +34,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/Deque.test.csx
       title: verify/data-structure/Deque.test.csx
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/data-structure/FenwickTree.test.csx
       title: verify/data-structure/FenwickTree.test.csx
     - icon: ':heavy_check_mark:'
