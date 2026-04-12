@@ -13,6 +13,9 @@ data:
       path: library/data-structure/SegmentTree.csx
       title: Segment Tree
     - icon: ':heavy_check_mark:'
+      path: library/data-structure/Set.csx
+      title: Set
+    - icon: ':heavy_check_mark:'
       path: library/data-structure/SparseTable.csx
       title: Sparse Table
     - icon: ':heavy_check_mark:'
@@ -40,6 +43,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/SegmentTree.test.csx
       title: verify/data-structure/SegmentTree.test.csx
+    - icon: ':heavy_check_mark:'
+      path: verify/data-structure/Set.test.csx
+      title: verify/data-structure/Set.test.csx
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/SparseTable.test.csx
       title: verify/data-structure/SparseTable.test.csx
