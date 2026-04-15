@@ -36,7 +36,7 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
 
     public ModInt(long value)
     {
-        value &= default(T).Mod;
+        value %= default(T).Mod;
         if (value < 0) value += default(T).Mod;
         Value = (uint)value;
     }
@@ -72,8 +72,8 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
         }
         else
         {
-            uint res = 1;
-            uint b = Value;
+            ulong res = 1;
+            ulong b = Value;
             while (e > 0)
             {
                 if ((e & 1) == 1) res = res * b % default(T).Mod;
@@ -81,7 +81,7 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
                 e >>= 1;
             }
 
-            return CreateFast(res);
+            return CreateFast((uint)res);
         }
     }
 
@@ -127,18 +127,18 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
     public static ModInt<T> operator -(ModInt<T> self) => CreateFast(default(T).Mod - self.Value);
 
     [MethodImpl(256)]
-    public static ModInt<T> operator *(ModInt<T> left, ModInt<T> right) => CreateFast(left.Value * right.Value % default(T).Mod);
+    public static ModInt<T> operator *(ModInt<T> left, ModInt<T> right) => CreateFast((uint)((ulong)left.Value * right.Value % default(T).Mod));
 
     [MethodImpl(256)]
     public static ModInt<T> operator /(ModInt<T> left, ModInt<T> right)
     {
-        if (right.Value == 0L)
+        if (right.Value == 0)
         {
             throw new DivideByZeroException();
         }
 
         ModInt<T> inv = right.Inv();
-        return CreateFast(left.Value * inv.Value % default(T).Mod);
+        return left * inv;
     }
 
     public static ModInt<T> operator %(ModInt<T> left, ModInt<T> right)
@@ -200,12 +200,6 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
     [MethodImpl(256)]
     public static implicit operator ModInt<T>(int v) => new(v);
 
-    [MethodImpl(256)]
-    public static implicit operator long(in ModInt<T> m) => m.Value;
-
-    [MethodImpl(256)]
-    public static implicit operator int(in ModInt<T> m) => (int)m.Value;
-
     public override string ToString() => Value.ToString();
 
     public string ToString(string format, IFormatProvider provider) => Value.ToString(format, provider);
@@ -256,16 +250,20 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
 
     public static ModInt<T> Parse(ReadOnlySpan<char> s, NumberStyles style, IFormatProvider provider) => new(long.Parse(s, style, provider));
 
+#if NET10_0_OR_GREATER
     public static ModInt<T> Parse(ReadOnlySpan<byte> s, NumberStyles style, IFormatProvider provider) => new(long.Parse(s, style, provider));
+#endif
 
     public static ModInt<T> Parse(string s, IFormatProvider provider) => new(long.Parse(s, provider));
 
     public static ModInt<T> Parse(ReadOnlySpan<char> s, IFormatProvider provider) => new(long.Parse(s, provider));
 
+#if NET10_0_OR_GREATER
     public bool TryFormat(Span<byte> dest, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider provider)
     {
         return Value.TryFormat(dest, out bytesWritten, format, provider);
     }
+#endif
 
     public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider provider)
     {
@@ -372,16 +370,3 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
 
     #endregion
 }
-
-/// <summary>
-/// Used to specify modulus.
-/// </summary>
-public interface IMod
-{
-    public uint Mod { get; }
-}
-
-public readonly struct Mod998244353 : IMod { public uint Mod => 998244353; }
-public readonly struct Mod1000000007 : IMod { public uint Mod => 1000000007; }
-public readonly struct Mod897581057 : IMod { public uint Mod => 897581057; }
-public readonly struct Mod880803841 : IMod { public uint Mod => 880803841; }
