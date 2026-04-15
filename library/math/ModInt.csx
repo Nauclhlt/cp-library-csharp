@@ -5,41 +5,49 @@
 public readonly struct ModInt<T> : INumber<ModInt<T>>
                                     where T : struct, IMod
 {
-    public static long Mod => _mod.Mod;
+    public static long Mod => default(T).Mod;
 
-    private static readonly T _mod = default;
+    public readonly uint Value;
 
-    public readonly long Value;
+    public long ValueLong => Value;
 
     /// <summary>
     /// Returns 1. Time complexity is O(1).
     /// </summary>
-    public static ModInt<T> One { get; } = CreateFast(1L);
+    public static ModInt<T> One { get; } = CreateFast(1);
 
     /// <summary>
     /// Returns 0. Time complexity is O(1).
     /// </summary>
-    public static ModInt<T> Zero { get; } = CreateFast(0L);
+    public static ModInt<T> Zero { get; } = CreateFast(0);
 
     public static int Radix => 10;
-    public static ModInt<T> MinValue => CreateFast(0L);
-    public static ModInt<T> MaxValue => CreateFast(_mod.Mod - 1);
+    public static ModInt<T> MinValue => CreateFast(0);
+    public static ModInt<T> MaxValue => CreateFast(default(T).Mod - 1);
 
     /// <summary>
     /// Returns the additive identity, 0. Time complexity is O(1).
     /// </summary>
-    public static ModInt<T> AdditiveIdentity { get; } = CreateFast(0L);
+    public static ModInt<T> AdditiveIdentity { get; } = CreateFast(0);
     /// <summary>
     /// Returns the multiplicative identity, 1. Time complexity is O(1).
     /// </summary>
-    public static ModInt<T> MultiplicativeIdentity { get; } = CreateFast(1L);
+    public static ModInt<T> MultiplicativeIdentity { get; } = CreateFast(1);
 
     public ModInt(long value)
     {
-        Value = SafeMod(value);
+        value &= default(T).Mod;
+        if (value < 0) value += default(T).Mod;
+        Value = (uint)value;
     }
 
-    private ModInt(long value, bool dummy)
+    public ModInt(uint value)
+    {
+        value %= default(T).Mod;
+        Value = value;
+    }
+
+    private ModInt(uint value, bool dummy)
     {
         Value = value;
     }
@@ -48,15 +56,9 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
     /// Constructs the modint with the value. Can only be used when 0 <= value < MOD. Maybe slightly faster than implicit cast. Time complexity is O(1).
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ModInt<T> CreateFast(long value)
+    public static ModInt<T> CreateFast(uint value)
     {
         return new ModInt<T>(value, false);
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static long SafeMod(long a)
-    {
-        return a % _mod.Mod + ((a >> 63) & _mod.Mod);
     }
 
     /// <summary>
@@ -70,12 +72,12 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
         }
         else
         {
-            long res = 1L;
-            long b = Value;
+            uint res = 1;
+            uint b = Value;
             while (e > 0)
             {
-                if ((e & 1) == 1) res = res * b % _mod.Mod;
-                b = b * b % _mod.Mod;
+                if ((e & 1) == 1) res = res * b % default(T).Mod;
+                b = b * b % default(T).Mod;
                 e >>= 1;
             }
 
@@ -85,12 +87,13 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
 
     /// <summary>
     /// Returns the inverse. Do not call this function when 0. Time complexity is O(logp).
+    /// Reference: https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a
     /// </summary>
     public readonly ModInt<T> Inv()
     {
         long x = 1, y = 0;
         long x1 = 0, y1 = 1;
-        long b = _mod.Mod;
+        long b = default(T).Mod;
         long a = Value;
 
         while (b != 0)
@@ -112,19 +115,19 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
     }
 
     [MethodImpl(256)]
-    public static ModInt<T> operator +(ModInt<T> left, ModInt<T> right) => CreateFast((left.Value + right.Value) % _mod.Mod);
+    public static ModInt<T> operator +(ModInt<T> left, ModInt<T> right) => CreateFast((left.Value + right.Value) % default(T).Mod);
 
     [MethodImpl(256)]
     public static ModInt<T> operator +(ModInt<T> self) => self;
 
     [MethodImpl(256)]
-    public static ModInt<T> operator -(ModInt<T> left, ModInt<T> right) => CreateFast((left.Value - right.Value + _mod.Mod) % _mod.Mod);
+    public static ModInt<T> operator -(ModInt<T> left, ModInt<T> right) => CreateFast(left.Value >= right.Value ? left.Value - right.Value : (left.Value + default(T).Mod) - right.Value);
 
     [MethodImpl(256)]
-    public static ModInt<T> operator -(ModInt<T> self) => CreateFast(_mod.Mod - self.Value);
+    public static ModInt<T> operator -(ModInt<T> self) => CreateFast(default(T).Mod - self.Value);
 
     [MethodImpl(256)]
-    public static ModInt<T> operator *(ModInt<T> left, ModInt<T> right) => CreateFast(left.Value * right.Value % _mod.Mod);
+    public static ModInt<T> operator *(ModInt<T> left, ModInt<T> right) => CreateFast(left.Value * right.Value % default(T).Mod);
 
     [MethodImpl(256)]
     public static ModInt<T> operator /(ModInt<T> left, ModInt<T> right)
@@ -135,7 +138,7 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
         }
 
         ModInt<T> inv = right.Inv();
-        return CreateFast(left.Value * inv.Value % _mod.Mod);
+        return CreateFast(left.Value * inv.Value % default(T).Mod);
     }
 
     public static ModInt<T> operator %(ModInt<T> left, ModInt<T> right)
@@ -170,10 +173,10 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
     public static bool operator !=(ModInt<T> left, ModInt<T> right) => !(left == right);
 
     [MethodImpl(256)]
-    public static ModInt<T> operator ++(ModInt<T> self) => CreateFast((self.Value + 1) % _mod.Mod);
+    public static ModInt<T> operator ++(ModInt<T> self) => CreateFast((self.Value + 1) % default(T).Mod);
 
     [MethodImpl(256)]
-    public static ModInt<T> operator --(ModInt<T> self) => CreateFast((self.Value - 1 + _mod.Mod) % _mod.Mod);
+    public static ModInt<T> operator --(ModInt<T> self) => CreateFast((self.Value + default(T).Mod - 1) % default(T).Mod);
 
     [MethodImpl(256)]
     public bool Equals(ModInt<T> other) => Value == other.Value;
@@ -192,10 +195,10 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
     public override int GetHashCode() => Value.GetHashCode();
 
     [MethodImpl(256)]
-    public static implicit operator ModInt<T>(long v) => new ModInt<T>(v);
+    public static implicit operator ModInt<T>(long v) => new(v);
 
     [MethodImpl(256)]
-    public static implicit operator ModInt<T>(int v) => new ModInt<T>(v);
+    public static implicit operator ModInt<T>(int v) => new(v);
 
     [MethodImpl(256)]
     public static implicit operator long(in ModInt<T> m) => m.Value;
@@ -218,9 +221,9 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
     public static bool IsInteger(ModInt<T> value) => true;
     public static bool IsNaN(ModInt<T> value) => false;
     public static bool IsNegative(ModInt<T> value) => false;
-    public static bool IsPositive(ModInt<T> value) => value.Value != 0L;
+    public static bool IsPositive(ModInt<T> value) => value.Value != 0;
     public static bool IsRealNumber(ModInt<T> value) => true;
-    public static bool IsZero(ModInt<T> value) => value.Value == 0L;
+    public static bool IsZero(ModInt<T> value) => value.Value == 0;
     public static bool IsEvenInteger(ModInt<T> value) => (value.Value & 1) == 0;
     public static bool IsOddInteger(ModInt<T> value) => (value.Value & 1) == 1;
     public static bool IsPositiveInfinity(ModInt<T> value) => false;
@@ -375,10 +378,10 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
 /// </summary>
 public interface IMod
 {
-    public long Mod { get; }
+    public uint Mod { get; }
 }
 
-public readonly struct Mod998244353 : IMod { public long Mod => 998244353L; }
-public readonly struct Mod1000000007 : IMod { public long Mod => 1000000007L; }
-public readonly struct Mod897581057 : IMod { public long Mod => 897581057; }
-public readonly struct Mod880803841 : IMod { public long Mod => 880803841; }
+public readonly struct Mod998244353 : IMod { public uint Mod => 998244353; }
+public readonly struct Mod1000000007 : IMod { public uint Mod => 1000000007; }
+public readonly struct Mod897581057 : IMod { public uint Mod => 897581057; }
+public readonly struct Mod880803841 : IMod { public uint Mod => 880803841; }
