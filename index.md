@@ -23,7 +23,7 @@ data:
       title: Union-Find
   - name: library/math
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/math/ModInt.csx
       title: ModInt
   - name: library/utility
@@ -54,7 +54,7 @@ data:
       title: verify/data-structure/UnionFind.test.csx
   - name: verify/math
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/math/ModInt.test.csx
       title: verify/math/ModInt.test.csx
   - name: verify/utility

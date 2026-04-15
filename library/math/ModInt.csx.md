@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/math/ModInt.test.csx
     title: verify/math/ModInt.test.csx
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: csx
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -19,77 +19,78 @@ data:
   code: "/// <summary>\n/// Integer on F_p. (p: prime)\n/// </summary>\n/// <typeparam\
     \ name=\"T\">Modulus.</typeparam>\npublic readonly struct ModInt<T> : INumber<ModInt<T>>\n\
     \                                    where T : struct, IMod\n{\n    public static\
-    \ long Mod => _mod.Mod;\n\n    private static readonly T _mod = default;\n\n \
-    \   public readonly long Value;\n\n    /// <summary>\n    /// Returns 1. Time\
-    \ complexity is O(1).\n    /// </summary>\n    public static ModInt<T> One { get;\
-    \ } = CreateFast(1L);\n\n    /// <summary>\n    /// Returns 0. Time complexity\
-    \ is O(1).\n    /// </summary>\n    public static ModInt<T> Zero { get; } = CreateFast(0L);\n\
-    \n    public static int Radix => 10;\n    public static ModInt<T> MinValue =>\
-    \ CreateFast(0L);\n    public static ModInt<T> MaxValue => CreateFast(_mod.Mod\
-    \ - 1);\n\n    /// <summary>\n    /// Returns the additive identity, 0. Time complexity\
-    \ is O(1).\n    /// </summary>\n    public static ModInt<T> AdditiveIdentity {\
-    \ get; } = CreateFast(0L);\n    /// <summary>\n    /// Returns the multiplicative\
-    \ identity, 1. Time complexity is O(1).\n    /// </summary>\n    public static\
-    \ ModInt<T> MultiplicativeIdentity { get; } = CreateFast(1L);\n\n    public ModInt(long\
-    \ value)\n    {\n        Value = SafeMod(value);\n    }\n\n    private ModInt(long\
-    \ value, bool dummy)\n    {\n        Value = value;\n    }\n\n    /// <summary>\n\
-    \    /// Constructs the modint with the value. Can only be used when 0 <= value\
-    \ < MOD. Maybe slightly faster than implicit cast. Time complexity is O(1).\n\
-    \    /// </summary>\n    [MethodImpl(MethodImplOptions.AggressiveInlining)]\n\
-    \    public static ModInt<T> CreateFast(long value)\n    {\n        return new\
-    \ ModInt<T>(value, false);\n    }\n\n    [MethodImpl(MethodImplOptions.AggressiveInlining)]\n\
-    \    private static long SafeMod(long a)\n    {\n        return a % _mod.Mod +\
-    \ ((a >> 63) & _mod.Mod);\n    }\n\n    /// <summary>\n    /// Calculates the\
+    \ long Mod => default(T).Mod;\n\n    public readonly uint Value;\n\n    public\
+    \ long ValueLong => Value;\n\n    /// <summary>\n    /// Returns 1. Time complexity\
+    \ is O(1).\n    /// </summary>\n    public static ModInt<T> One { get; } = CreateFast(1);\n\
+    \n    /// <summary>\n    /// Returns 0. Time complexity is O(1).\n    /// </summary>\n\
+    \    public static ModInt<T> Zero { get; } = CreateFast(0);\n\n    public static\
+    \ int Radix => 10;\n    public static ModInt<T> MinValue => CreateFast(0);\n \
+    \   public static ModInt<T> MaxValue => CreateFast(default(T).Mod - 1);\n\n  \
+    \  /// <summary>\n    /// Returns the additive identity, 0. Time complexity is\
+    \ O(1).\n    /// </summary>\n    public static ModInt<T> AdditiveIdentity { get;\
+    \ } = CreateFast(0);\n    /// <summary>\n    /// Returns the multiplicative identity,\
+    \ 1. Time complexity is O(1).\n    /// </summary>\n    public static ModInt<T>\
+    \ MultiplicativeIdentity { get; } = CreateFast(1);\n\n    public ModInt(long value)\n\
+    \    {\n        value &= default(T).Mod;\n        if (value < 0) value += default(T).Mod;\n\
+    \        Value = (uint)value;\n    }\n\n    public ModInt(uint value)\n    {\n\
+    \        value %= default(T).Mod;\n        Value = value;\n    }\n\n    private\
+    \ ModInt(uint value, bool dummy)\n    {\n        Value = value;\n    }\n\n   \
+    \ /// <summary>\n    /// Constructs the modint with the value. Can only be used\
+    \ when 0 <= value < MOD. Maybe slightly faster than implicit cast. Time complexity\
+    \ is O(1).\n    /// </summary>\n    [MethodImpl(MethodImplOptions.AggressiveInlining)]\n\
+    \    public static ModInt<T> CreateFast(uint value)\n    {\n        return new\
+    \ ModInt<T>(value, false);\n    }\n\n    /// <summary>\n    /// Calculates the\
     \ power to e. Time complexity is O(loge)\n    /// </summary>\n    public readonly\
     \ ModInt<T> Power(long e)\n    {\n        if (e < 0)\n        {\n            return\
-    \ Power(-e).Inv();\n        }\n        else\n        {\n            long res =\
-    \ 1L;\n            long b = Value;\n            while (e > 0)\n            {\n\
-    \                if ((e & 1) == 1) res = res * b % _mod.Mod;\n               \
-    \ b = b * b % _mod.Mod;\n                e >>= 1;\n            }\n\n         \
-    \   return CreateFast(res);\n        }\n    }\n\n    /// <summary>\n    /// Returns\
-    \ the inverse. Do not call this function when 0. Time complexity is O(logp).\n\
+    \ Power(-e).Inv();\n        }\n        else\n        {\n            uint res =\
+    \ 1;\n            uint b = Value;\n            while (e > 0)\n            {\n\
+    \                if ((e & 1) == 1) res = res * b % default(T).Mod;\n         \
+    \       b = b * b % default(T).Mod;\n                e >>= 1;\n            }\n\
+    \n            return CreateFast(res);\n        }\n    }\n\n    /// <summary>\n\
+    \    /// Returns the inverse. Do not call this function when 0. Time complexity\
+    \ is O(logp).\n    /// Reference: https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a\n\
     \    /// </summary>\n    public readonly ModInt<T> Inv()\n    {\n        long\
-    \ x = 1, y = 0;\n        long x1 = 0, y1 = 1;\n        long b = _mod.Mod;\n  \
-    \      long a = Value;\n\n        while (b != 0)\n        {\n            long\
+    \ x = 1, y = 0;\n        long x1 = 0, y1 = 1;\n        long b = default(T).Mod;\n\
+    \        long a = Value;\n\n        while (b != 0)\n        {\n            long\
     \ q = a / b;\n            long t = a % b;\n            a = b;\n            b =\
     \ t;\n\n            long tx = x - q * x1;\n            long ty = y - q * y1;\n\
     \            x = x1;\n            y = y1;\n            x1 = tx;\n            y1\
     \ = ty;\n        }\n\n        return new(x);\n    }\n\n    [MethodImpl(256)]\n\
     \    public static ModInt<T> operator +(ModInt<T> left, ModInt<T> right) => CreateFast((left.Value\
-    \ + right.Value) % _mod.Mod);\n\n    [MethodImpl(256)]\n    public static ModInt<T>\
-    \ operator +(ModInt<T> self) => self;\n\n    [MethodImpl(256)]\n    public static\
-    \ ModInt<T> operator -(ModInt<T> left, ModInt<T> right) => CreateFast((left.Value\
-    \ - right.Value + _mod.Mod) % _mod.Mod);\n\n    [MethodImpl(256)]\n    public\
-    \ static ModInt<T> operator -(ModInt<T> self) => CreateFast(_mod.Mod - self.Value);\n\
-    \n    [MethodImpl(256)]\n    public static ModInt<T> operator *(ModInt<T> left,\
-    \ ModInt<T> right) => CreateFast(left.Value * right.Value % _mod.Mod);\n\n   \
-    \ [MethodImpl(256)]\n    public static ModInt<T> operator /(ModInt<T> left, ModInt<T>\
-    \ right)\n    {\n        if (right.Value == 0L)\n        {\n            throw\
-    \ new DivideByZeroException();\n        }\n\n        ModInt<T> inv = right.Inv();\n\
-    \        return CreateFast(left.Value * inv.Value % _mod.Mod);\n    }\n\n    public\
-    \ static ModInt<T> operator %(ModInt<T> left, ModInt<T> right)\n    {\n      \
-    \  throw new NotImplementedException();\n    }\n\n    public static bool operator\
-    \ <(ModInt<T> left, ModInt<T> right)\n    {\n        throw new NotImplementedException();\n\
-    \    }\n\n    public static bool operator >(ModInt<T> left, ModInt<T> right)\n\
+    \ + right.Value) % default(T).Mod);\n\n    [MethodImpl(256)]\n    public static\
+    \ ModInt<T> operator +(ModInt<T> self) => self;\n\n    [MethodImpl(256)]\n   \
+    \ public static ModInt<T> operator -(ModInt<T> left, ModInt<T> right) => CreateFast(left.Value\
+    \ >= right.Value ? left.Value - right.Value : (left.Value + default(T).Mod) -\
+    \ right.Value);\n\n    [MethodImpl(256)]\n    public static ModInt<T> operator\
+    \ -(ModInt<T> self) => CreateFast(default(T).Mod - self.Value);\n\n    [MethodImpl(256)]\n\
+    \    public static ModInt<T> operator *(ModInt<T> left, ModInt<T> right) => CreateFast(left.Value\
+    \ * right.Value % default(T).Mod);\n\n    [MethodImpl(256)]\n    public static\
+    \ ModInt<T> operator /(ModInt<T> left, ModInt<T> right)\n    {\n        if (right.Value\
+    \ == 0L)\n        {\n            throw new DivideByZeroException();\n        }\n\
+    \n        ModInt<T> inv = right.Inv();\n        return CreateFast(left.Value *\
+    \ inv.Value % default(T).Mod);\n    }\n\n    public static ModInt<T> operator\
+    \ %(ModInt<T> left, ModInt<T> right)\n    {\n        throw new NotImplementedException();\n\
+    \    }\n\n    public static bool operator <(ModInt<T> left, ModInt<T> right)\n\
     \    {\n        throw new NotImplementedException();\n    }\n\n    public static\
-    \ bool operator <=(ModInt<T> left, ModInt<T> right)\n    {\n        throw new\
-    \ NotImplementedException();\n    }\n\n    public static bool operator >=(ModInt<T>\
-    \ left, ModInt<T> right)\n    {\n        throw new NotImplementedException();\n\
-    \    }\n\n    [MethodImpl(256)]\n    public static bool operator ==(ModInt<T>\
-    \ left, ModInt<T> right) => left.Value == right.Value;\n\n    [MethodImpl(256)]\n\
-    \    public static bool operator !=(ModInt<T> left, ModInt<T> right) => !(left\
-    \ == right);\n\n    [MethodImpl(256)]\n    public static ModInt<T> operator ++(ModInt<T>\
-    \ self) => CreateFast((self.Value + 1) % _mod.Mod);\n\n    [MethodImpl(256)]\n\
-    \    public static ModInt<T> operator --(ModInt<T> self) => CreateFast((self.Value\
-    \ - 1 + _mod.Mod) % _mod.Mod);\n\n    [MethodImpl(256)]\n    public bool Equals(ModInt<T>\
-    \ other) => Value == other.Value;\n\n    [MethodImpl(256)]\n    public override\
-    \ bool Equals(object other)\n    {\n        if (other is ModInt<T> m)\n      \
-    \  {\n            return this == m;\n        }\n        else return false;\n \
-    \   }\n\n    [MethodImpl(256)]\n    public override int GetHashCode() => Value.GetHashCode();\n\
-    \n    [MethodImpl(256)]\n    public static implicit operator ModInt<T>(long v)\
-    \ => new ModInt<T>(v);\n\n    [MethodImpl(256)]\n    public static implicit operator\
-    \ ModInt<T>(int v) => new ModInt<T>(v);\n\n    [MethodImpl(256)]\n    public static\
-    \ implicit operator long(in ModInt<T> m) => m.Value;\n\n    [MethodImpl(256)]\n\
+    \ bool operator >(ModInt<T> left, ModInt<T> right)\n    {\n        throw new NotImplementedException();\n\
+    \    }\n\n    public static bool operator <=(ModInt<T> left, ModInt<T> right)\n\
+    \    {\n        throw new NotImplementedException();\n    }\n\n    public static\
+    \ bool operator >=(ModInt<T> left, ModInt<T> right)\n    {\n        throw new\
+    \ NotImplementedException();\n    }\n\n    [MethodImpl(256)]\n    public static\
+    \ bool operator ==(ModInt<T> left, ModInt<T> right) => left.Value == right.Value;\n\
+    \n    [MethodImpl(256)]\n    public static bool operator !=(ModInt<T> left, ModInt<T>\
+    \ right) => !(left == right);\n\n    [MethodImpl(256)]\n    public static ModInt<T>\
+    \ operator ++(ModInt<T> self) => CreateFast((self.Value + 1) % default(T).Mod);\n\
+    \n    [MethodImpl(256)]\n    public static ModInt<T> operator --(ModInt<T> self)\
+    \ => CreateFast((self.Value + default(T).Mod - 1) % default(T).Mod);\n\n    [MethodImpl(256)]\n\
+    \    public bool Equals(ModInt<T> other) => Value == other.Value;\n\n    [MethodImpl(256)]\n\
+    \    public override bool Equals(object other)\n    {\n        if (other is ModInt<T>\
+    \ m)\n        {\n            return this == m;\n        }\n        else return\
+    \ false;\n    }\n\n    [MethodImpl(256)]\n    public override int GetHashCode()\
+    \ => Value.GetHashCode();\n\n    [MethodImpl(256)]\n    public static implicit\
+    \ operator ModInt<T>(long v) => new(v);\n\n    [MethodImpl(256)]\n    public static\
+    \ implicit operator ModInt<T>(int v) => new(v);\n\n    [MethodImpl(256)]\n   \
+    \ public static implicit operator long(in ModInt<T> m) => m.Value;\n\n    [MethodImpl(256)]\n\
     \    public static implicit operator int(in ModInt<T> m) => (int)m.Value;\n\n\
     \    public override string ToString() => Value.ToString();\n\n    public string\
     \ ToString(string format, IFormatProvider provider) => Value.ToString(format,\
@@ -101,9 +102,9 @@ data:
     \ bool IsInfinity(ModInt<T> value) => false;\n    public static bool IsInteger(ModInt<T>\
     \ value) => true;\n    public static bool IsNaN(ModInt<T> value) => false;\n \
     \   public static bool IsNegative(ModInt<T> value) => false;\n    public static\
-    \ bool IsPositive(ModInt<T> value) => value.Value != 0L;\n    public static bool\
+    \ bool IsPositive(ModInt<T> value) => value.Value != 0;\n    public static bool\
     \ IsRealNumber(ModInt<T> value) => true;\n    public static bool IsZero(ModInt<T>\
-    \ value) => value.Value == 0L;\n    public static bool IsEvenInteger(ModInt<T>\
+    \ value) => value.Value == 0;\n    public static bool IsEvenInteger(ModInt<T>\
     \ value) => (value.Value & 1) == 0;\n    public static bool IsOddInteger(ModInt<T>\
     \ value) => (value.Value & 1) == 1;\n    public static bool IsPositiveInfinity(ModInt<T>\
     \ value) => false;\n    public static bool IsNegativeInfinity(ModInt<T> value)\
@@ -169,17 +170,17 @@ data:
     \ Implementation\n\n    public int CompareTo(ModInt<T> other) => Value.CompareTo(other.Value);\n\
     \    public int CompareTo(object other) => Value.CompareTo(other);\n\n\n    #endregion\n\
     }\n\n/// <summary>\n/// Used to specify modulus.\n/// </summary>\npublic interface\
-    \ IMod\n{\n    public long Mod { get; }\n}\n\npublic readonly struct Mod998244353\
-    \ : IMod { public long Mod => 998244353L; }\npublic readonly struct Mod1000000007\
-    \ : IMod { public long Mod => 1000000007L; }\npublic readonly struct Mod897581057\
-    \ : IMod { public long Mod => 897581057; }\npublic readonly struct Mod880803841\
-    \ : IMod { public long Mod => 880803841; }"
+    \ IMod\n{\n    public uint Mod { get; }\n}\n\npublic readonly struct Mod998244353\
+    \ : IMod { public uint Mod => 998244353; }\npublic readonly struct Mod1000000007\
+    \ : IMod { public uint Mod => 1000000007; }\npublic readonly struct Mod897581057\
+    \ : IMod { public uint Mod => 897581057; }\npublic readonly struct Mod880803841\
+    \ : IMod { public uint Mod => 880803841; }"
   dependsOn: []
   isVerificationFile: false
   path: library/math/ModInt.csx
   requiredBy: []
-  timestamp: '2026-03-30 14:27:54+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2026-04-15 20:12:15+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/math/ModInt.test.csx
 documentation_of: library/math/ModInt.csx
