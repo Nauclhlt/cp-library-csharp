@@ -31,7 +31,7 @@ data:
     \ } = CreateFast(0);\n    /// <summary>\n    /// Returns the multiplicative identity,\
     \ 1. Time complexity is O(1).\n    /// </summary>\n    public static ModInt<T>\
     \ MultiplicativeIdentity { get; } = CreateFast(1);\n\n    public ModInt(long value)\n\
-    \    {\n        value &= default(T).Mod;\n        if (value < 0) value += default(T).Mod;\n\
+    \    {\n        value %= default(T).Mod;\n        if (value < 0) value += default(T).Mod;\n\
     \        Value = (uint)value;\n    }\n\n    public ModInt(uint value)\n    {\n\
     \        value %= default(T).Mod;\n        Value = value;\n    }\n\n    private\
     \ ModInt(uint value, bool dummy)\n    {\n        Value = value;\n    }\n\n   \
@@ -42,11 +42,11 @@ data:
     \ ModInt<T>(value, false);\n    }\n\n    /// <summary>\n    /// Calculates the\
     \ power to e. Time complexity is O(loge)\n    /// </summary>\n    public readonly\
     \ ModInt<T> Power(long e)\n    {\n        if (e < 0)\n        {\n            return\
-    \ Power(-e).Inv();\n        }\n        else\n        {\n            uint res =\
-    \ 1;\n            uint b = Value;\n            while (e > 0)\n            {\n\
+    \ Power(-e).Inv();\n        }\n        else\n        {\n            ulong res\
+    \ = 1;\n            ulong b = Value;\n            while (e > 0)\n            {\n\
     \                if ((e & 1) == 1) res = res * b % default(T).Mod;\n         \
     \       b = b * b % default(T).Mod;\n                e >>= 1;\n            }\n\
-    \n            return CreateFast(res);\n        }\n    }\n\n    /// <summary>\n\
+    \n            return CreateFast((uint)res);\n        }\n    }\n\n    /// <summary>\n\
     \    /// Returns the inverse. Do not call this function when 0. Time complexity\
     \ is O(logp).\n    /// Reference: https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a\n\
     \    /// </summary>\n    public readonly ModInt<T> Inv()\n    {\n        long\
@@ -63,81 +63,79 @@ data:
     \ >= right.Value ? left.Value - right.Value : (left.Value + default(T).Mod) -\
     \ right.Value);\n\n    [MethodImpl(256)]\n    public static ModInt<T> operator\
     \ -(ModInt<T> self) => CreateFast(default(T).Mod - self.Value);\n\n    [MethodImpl(256)]\n\
-    \    public static ModInt<T> operator *(ModInt<T> left, ModInt<T> right) => CreateFast(left.Value\
-    \ * right.Value % default(T).Mod);\n\n    [MethodImpl(256)]\n    public static\
+    \    public static ModInt<T> operator *(ModInt<T> left, ModInt<T> right) => CreateFast((uint)((ulong)left.Value\
+    \ * right.Value % default(T).Mod));\n\n    [MethodImpl(256)]\n    public static\
     \ ModInt<T> operator /(ModInt<T> left, ModInt<T> right)\n    {\n        if (right.Value\
-    \ == 0L)\n        {\n            throw new DivideByZeroException();\n        }\n\
-    \n        ModInt<T> inv = right.Inv();\n        return CreateFast(left.Value *\
-    \ inv.Value % default(T).Mod);\n    }\n\n    public static ModInt<T> operator\
-    \ %(ModInt<T> left, ModInt<T> right)\n    {\n        throw new NotImplementedException();\n\
-    \    }\n\n    public static bool operator <(ModInt<T> left, ModInt<T> right)\n\
+    \ == 0)\n        {\n            throw new DivideByZeroException();\n        }\n\
+    \n        ModInt<T> inv = right.Inv();\n        return left * inv;\n    }\n\n\
+    \    public static ModInt<T> operator %(ModInt<T> left, ModInt<T> right)\n   \
+    \ {\n        throw new NotImplementedException();\n    }\n\n    public static\
+    \ bool operator <(ModInt<T> left, ModInt<T> right)\n    {\n        throw new NotImplementedException();\n\
+    \    }\n\n    public static bool operator >(ModInt<T> left, ModInt<T> right)\n\
     \    {\n        throw new NotImplementedException();\n    }\n\n    public static\
-    \ bool operator >(ModInt<T> left, ModInt<T> right)\n    {\n        throw new NotImplementedException();\n\
-    \    }\n\n    public static bool operator <=(ModInt<T> left, ModInt<T> right)\n\
-    \    {\n        throw new NotImplementedException();\n    }\n\n    public static\
-    \ bool operator >=(ModInt<T> left, ModInt<T> right)\n    {\n        throw new\
-    \ NotImplementedException();\n    }\n\n    [MethodImpl(256)]\n    public static\
-    \ bool operator ==(ModInt<T> left, ModInt<T> right) => left.Value == right.Value;\n\
-    \n    [MethodImpl(256)]\n    public static bool operator !=(ModInt<T> left, ModInt<T>\
-    \ right) => !(left == right);\n\n    [MethodImpl(256)]\n    public static ModInt<T>\
-    \ operator ++(ModInt<T> self) => CreateFast((self.Value + 1) % default(T).Mod);\n\
-    \n    [MethodImpl(256)]\n    public static ModInt<T> operator --(ModInt<T> self)\
-    \ => CreateFast((self.Value + default(T).Mod - 1) % default(T).Mod);\n\n    [MethodImpl(256)]\n\
-    \    public bool Equals(ModInt<T> other) => Value == other.Value;\n\n    [MethodImpl(256)]\n\
+    \ bool operator <=(ModInt<T> left, ModInt<T> right)\n    {\n        throw new\
+    \ NotImplementedException();\n    }\n\n    public static bool operator >=(ModInt<T>\
+    \ left, ModInt<T> right)\n    {\n        throw new NotImplementedException();\n\
+    \    }\n\n    [MethodImpl(256)]\n    public static bool operator ==(ModInt<T>\
+    \ left, ModInt<T> right) => left.Value == right.Value;\n\n    [MethodImpl(256)]\n\
+    \    public static bool operator !=(ModInt<T> left, ModInt<T> right) => !(left\
+    \ == right);\n\n    [MethodImpl(256)]\n    public static ModInt<T> operator ++(ModInt<T>\
+    \ self) => CreateFast((self.Value + 1) % default(T).Mod);\n\n    [MethodImpl(256)]\n\
+    \    public static ModInt<T> operator --(ModInt<T> self) => CreateFast((self.Value\
+    \ + default(T).Mod - 1) % default(T).Mod);\n\n    [MethodImpl(256)]\n    public\
+    \ bool Equals(ModInt<T> other) => Value == other.Value;\n\n    [MethodImpl(256)]\n\
     \    public override bool Equals(object other)\n    {\n        if (other is ModInt<T>\
     \ m)\n        {\n            return this == m;\n        }\n        else return\
     \ false;\n    }\n\n    [MethodImpl(256)]\n    public override int GetHashCode()\
     \ => Value.GetHashCode();\n\n    [MethodImpl(256)]\n    public static implicit\
     \ operator ModInt<T>(long v) => new(v);\n\n    [MethodImpl(256)]\n    public static\
-    \ implicit operator ModInt<T>(int v) => new(v);\n\n    [MethodImpl(256)]\n   \
-    \ public static implicit operator long(in ModInt<T> m) => m.Value;\n\n    [MethodImpl(256)]\n\
-    \    public static implicit operator int(in ModInt<T> m) => (int)m.Value;\n\n\
-    \    public override string ToString() => Value.ToString();\n\n    public string\
-    \ ToString(string format, IFormatProvider provider) => Value.ToString(format,\
-    \ provider);\n\n    #region INumberBase<TSelf> Implementation\n\n    public static\
-    \ ModInt<T> Abs(ModInt<T> value) => value;\n    public static bool IsCanonical(ModInt<T>\
-    \ value) => true;\n    public static bool IsComplexNumber(ModInt<T> value) =>\
-    \ false;\n    public static bool IsFinite(ModInt<T> value) => true;\n    public\
-    \ static bool IsImaginaryNumber(ModInt<T> value) => false;\n    public static\
-    \ bool IsInfinity(ModInt<T> value) => false;\n    public static bool IsInteger(ModInt<T>\
-    \ value) => true;\n    public static bool IsNaN(ModInt<T> value) => false;\n \
-    \   public static bool IsNegative(ModInt<T> value) => false;\n    public static\
-    \ bool IsPositive(ModInt<T> value) => value.Value != 0;\n    public static bool\
-    \ IsRealNumber(ModInt<T> value) => true;\n    public static bool IsZero(ModInt<T>\
-    \ value) => value.Value == 0;\n    public static bool IsEvenInteger(ModInt<T>\
-    \ value) => (value.Value & 1) == 0;\n    public static bool IsOddInteger(ModInt<T>\
-    \ value) => (value.Value & 1) == 1;\n    public static bool IsPositiveInfinity(ModInt<T>\
-    \ value) => false;\n    public static bool IsNegativeInfinity(ModInt<T> value)\
-    \ => false;\n    public static bool IsNormal(ModInt<T> value) => false;\n    public\
-    \ static bool IsSubnormal(ModInt<T> value) => false;\n\n\n    public static ModInt<T>\
-    \ MaxMagnitude(ModInt<T> x, ModInt<T> y)\n    {\n        if (x.Value > y.Value)\
-    \ return x;\n        else return y;\n    }\n    public static ModInt<T> MaxMagnitudeNumber(ModInt<T>\
-    \ x, ModInt<T> y) => MaxMagnitude(x, y);\n    public static ModInt<T> MinMagnitude(ModInt<T>\
-    \ x, ModInt<T> y)\n    {\n        if (x.Value < y.Value) return x;\n        else\
-    \ return y;\n    }\n    public static ModInt<T> MinMagnitudeNumber(ModInt<T> x,\
-    \ ModInt<T> y) => MinMagnitude(x, y);\n\n    public static ModInt<T> CreateChecked<TOther>(TOther\
-    \ value) where TOther : INumberBase<TOther>\n        => new(long.CreateChecked(value));\n\
-    \    public static ModInt<T> CreateSaturating<TOther>(TOther value) where TOther\
-    \ : INumberBase<TOther>\n        => new(long.CreateSaturating(value));\n    public\
-    \ static ModInt<T> CreateTruncating<TOther>(TOther value) where TOther : INumberBase<TOther>\n\
-    \        => new(long.CreateTruncating(value));\n\n    public static ModInt<T>\
-    \ Parse(string s, NumberStyles style, IFormatProvider provider) => Parse(s.AsSpan(),\
-    \ style, provider);\n\n    public static ModInt<T> Parse(ReadOnlySpan<char> s,\
-    \ NumberStyles style, IFormatProvider provider) => new(long.Parse(s, style, provider));\n\
-    \n    public static ModInt<T> Parse(ReadOnlySpan<byte> s, NumberStyles style,\
-    \ IFormatProvider provider) => new(long.Parse(s, style, provider));\n\n    public\
-    \ static ModInt<T> Parse(string s, IFormatProvider provider) => new(long.Parse(s,\
-    \ provider));\n\n    public static ModInt<T> Parse(ReadOnlySpan<char> s, IFormatProvider\
-    \ provider) => new(long.Parse(s, provider));\n\n    public bool TryFormat(Span<byte>\
-    \ dest, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider provider)\n\
-    \    {\n        return Value.TryFormat(dest, out bytesWritten, format, provider);\n\
-    \    }\n\n    public bool TryFormat(Span<char> destination, out int charsWritten,\
-    \ ReadOnlySpan<char> format, IFormatProvider provider)\n    {\n        return\
-    \ Value.TryFormat(destination, out charsWritten, format, provider);\n    }\n\n\
-    \    public static bool TryParse(ReadOnlySpan<char> s, NumberStyles style, IFormatProvider\
-    \ provider, out ModInt<T> result)\n    {\n        if (long.TryParse(s, style,\
-    \ provider, out long inner))\n        {\n            result = new(inner);\n  \
-    \          return true;\n        }\n        else\n        {\n            result\
+    \ implicit operator ModInt<T>(int v) => new(v);\n\n    public override string\
+    \ ToString() => Value.ToString();\n\n    public string ToString(string format,\
+    \ IFormatProvider provider) => Value.ToString(format, provider);\n\n    #region\
+    \ INumberBase<TSelf> Implementation\n\n    public static ModInt<T> Abs(ModInt<T>\
+    \ value) => value;\n    public static bool IsCanonical(ModInt<T> value) => true;\n\
+    \    public static bool IsComplexNumber(ModInt<T> value) => false;\n    public\
+    \ static bool IsFinite(ModInt<T> value) => true;\n    public static bool IsImaginaryNumber(ModInt<T>\
+    \ value) => false;\n    public static bool IsInfinity(ModInt<T> value) => false;\n\
+    \    public static bool IsInteger(ModInt<T> value) => true;\n    public static\
+    \ bool IsNaN(ModInt<T> value) => false;\n    public static bool IsNegative(ModInt<T>\
+    \ value) => false;\n    public static bool IsPositive(ModInt<T> value) => value.Value\
+    \ != 0;\n    public static bool IsRealNumber(ModInt<T> value) => true;\n    public\
+    \ static bool IsZero(ModInt<T> value) => value.Value == 0;\n    public static\
+    \ bool IsEvenInteger(ModInt<T> value) => (value.Value & 1) == 0;\n    public static\
+    \ bool IsOddInteger(ModInt<T> value) => (value.Value & 1) == 1;\n    public static\
+    \ bool IsPositiveInfinity(ModInt<T> value) => false;\n    public static bool IsNegativeInfinity(ModInt<T>\
+    \ value) => false;\n    public static bool IsNormal(ModInt<T> value) => false;\n\
+    \    public static bool IsSubnormal(ModInt<T> value) => false;\n\n\n    public\
+    \ static ModInt<T> MaxMagnitude(ModInt<T> x, ModInt<T> y)\n    {\n        if (x.Value\
+    \ > y.Value) return x;\n        else return y;\n    }\n    public static ModInt<T>\
+    \ MaxMagnitudeNumber(ModInt<T> x, ModInt<T> y) => MaxMagnitude(x, y);\n    public\
+    \ static ModInt<T> MinMagnitude(ModInt<T> x, ModInt<T> y)\n    {\n        if (x.Value\
+    \ < y.Value) return x;\n        else return y;\n    }\n    public static ModInt<T>\
+    \ MinMagnitudeNumber(ModInt<T> x, ModInt<T> y) => MinMagnitude(x, y);\n\n    public\
+    \ static ModInt<T> CreateChecked<TOther>(TOther value) where TOther : INumberBase<TOther>\n\
+    \        => new(long.CreateChecked(value));\n    public static ModInt<T> CreateSaturating<TOther>(TOther\
+    \ value) where TOther : INumberBase<TOther>\n        => new(long.CreateSaturating(value));\n\
+    \    public static ModInt<T> CreateTruncating<TOther>(TOther value) where TOther\
+    \ : INumberBase<TOther>\n        => new(long.CreateTruncating(value));\n\n   \
+    \ public static ModInt<T> Parse(string s, NumberStyles style, IFormatProvider\
+    \ provider) => Parse(s.AsSpan(), style, provider);\n\n    public static ModInt<T>\
+    \ Parse(ReadOnlySpan<char> s, NumberStyles style, IFormatProvider provider) =>\
+    \ new(long.Parse(s, style, provider));\n\n#if NET10_0_OR_GREATER\n    public static\
+    \ ModInt<T> Parse(ReadOnlySpan<byte> s, NumberStyles style, IFormatProvider provider)\
+    \ => new(long.Parse(s, style, provider));\n#endif\n\n    public static ModInt<T>\
+    \ Parse(string s, IFormatProvider provider) => new(long.Parse(s, provider));\n\
+    \n    public static ModInt<T> Parse(ReadOnlySpan<char> s, IFormatProvider provider)\
+    \ => new(long.Parse(s, provider));\n\n#if NET10_0_OR_GREATER\n    public bool\
+    \ TryFormat(Span<byte> dest, out int bytesWritten, ReadOnlySpan<char> format,\
+    \ IFormatProvider provider)\n    {\n        return Value.TryFormat(dest, out bytesWritten,\
+    \ format, provider);\n    }\n#endif\n\n    public bool TryFormat(Span<char> destination,\
+    \ out int charsWritten, ReadOnlySpan<char> format, IFormatProvider provider)\n\
+    \    {\n        return Value.TryFormat(destination, out charsWritten, format,\
+    \ provider);\n    }\n\n    public static bool TryParse(ReadOnlySpan<char> s, NumberStyles\
+    \ style, IFormatProvider provider, out ModInt<T> result)\n    {\n        if (long.TryParse(s,\
+    \ style, provider, out long inner))\n        {\n            result = new(inner);\n\
+    \            return true;\n        }\n        else\n        {\n            result\
     \ = Zero;\n            return false;\n        }\n\n    }\n\n    public static\
     \ bool TryParse(string s, NumberStyles style, IFormatProvider provider, out ModInt<T>\
     \ result)\n    {\n        if (long.TryParse(s, style, provider, out long inner))\n\
@@ -169,17 +167,12 @@ data:
     \ new NotImplementedException();\n    }\n\n\n    #endregion\n\n    #region INumber<TSelf>\
     \ Implementation\n\n    public int CompareTo(ModInt<T> other) => Value.CompareTo(other.Value);\n\
     \    public int CompareTo(object other) => Value.CompareTo(other);\n\n\n    #endregion\n\
-    }\n\n/// <summary>\n/// Used to specify modulus.\n/// </summary>\npublic interface\
-    \ IMod\n{\n    public uint Mod { get; }\n}\n\npublic readonly struct Mod998244353\
-    \ : IMod { public uint Mod => 998244353; }\npublic readonly struct Mod1000000007\
-    \ : IMod { public uint Mod => 1000000007; }\npublic readonly struct Mod897581057\
-    \ : IMod { public uint Mod => 897581057; }\npublic readonly struct Mod880803841\
-    \ : IMod { public uint Mod => 880803841; }"
+    }"
   dependsOn: []
   isVerificationFile: false
   path: library/math/ModInt.csx
   requiredBy: []
-  timestamp: '2026-04-15 20:12:15+09:00'
+  timestamp: '2026-04-15 21:36:08+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/math/ModInt.test.csx
