@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/math/ModInt.test.csx
     title: verify/math/ModInt.test.csx
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -167,13 +167,18 @@ data:
     \ new NotImplementedException();\n    }\n\n\n    #endregion\n\n    #region INumber<TSelf>\
     \ Implementation\n\n    public int CompareTo(ModInt<T> other) => Value.CompareTo(other.Value);\n\
     \    public int CompareTo(object other) => Value.CompareTo(other);\n\n\n    #endregion\n\
-    }"
+    }\n\n/// <summary>\n/// Used to specify modulus.\n/// </summary>\npublic interface\
+    \ IMod\n{\n    public uint Mod { get; }\n}\n\npublic readonly struct Mod998244353\
+    \ : IMod { public uint Mod => 998244353; }\npublic readonly struct Mod1000000007\
+    \ : IMod { public uint Mod => 1000000007; }\npublic readonly struct Mod897581057\
+    \ : IMod { public uint Mod => 897581057; }\npublic readonly struct Mod880803841\
+    \ : IMod { public uint Mod => 880803841; }"
   dependsOn: []
   isVerificationFile: false
   path: library/math/ModInt.csx
   requiredBy: []
-  timestamp: '2026-04-15 21:36:08+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2026-05-10 10:54:19+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/math/ModInt.test.csx
 documentation_of: library/math/ModInt.csx

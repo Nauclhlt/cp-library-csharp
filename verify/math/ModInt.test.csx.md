@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ModInt.csx
     title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
     links:
@@ -56,8 +56,8 @@ data:
   isVerificationFile: true
   path: verify/math/ModInt.test.csx
   requiredBy: []
-  timestamp: '2026-04-15 21:36:08+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2026-05-10 10:54:19+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/math/ModInt.test.csx
 layout: document

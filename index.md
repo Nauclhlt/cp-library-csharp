@@ -9,6 +9,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structure/FenwickTree.csx
       title: Fenwick Tree
+    - icon: ':x:'
+      path: library/data-structure/LazySegmentTree.csx
+      title: library/data-structure/LazySegmentTree.csx
     - icon: ':heavy_check_mark:'
       path: library/data-structure/SegmentTree.csx
       title: Segment Tree
@@ -23,7 +26,7 @@ data:
       title: Union-Find
   - name: library/math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/math/ModInt.csx
       title: ModInt
   - name: library/utility
@@ -40,6 +43,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/FenwickTree.test.csx
       title: verify/data-structure/FenwickTree.test.csx
+    - icon: ':x:'
+      path: verify/data-structure/LazySegmentTree.test.csx
+      title: verify/data-structure/LazySegmentTree.test.csx
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/SegmentTree.test.csx
       title: verify/data-structure/SegmentTree.test.csx
@@ -54,7 +60,7 @@ data:
       title: verify/data-structure/UnionFind.test.csx
   - name: verify/math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/math/ModInt.test.csx
       title: verify/math/ModInt.test.csx
   - name: verify/utility
