@@ -27,6 +27,44 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structure/UnionFind.csx
       title: Union-Find
+  - name: library/graph
+    pages:
+    - icon: ':warning:'
+      path: library/graph/BFS.csx
+      title: library/graph/BFS.csx
+    - icon: ':x:'
+      path: library/graph/BellmannFord.csx
+      title: library/graph/BellmannFord.csx
+    - icon: ':heavy_check_mark:'
+      path: library/graph/Dijkstra.csx
+      title: library/graph/Dijkstra.csx
+    - icon: ':warning:'
+      path: library/graph/DirectedGraph.csx
+      title: library/graph/DirectedGraph.csx
+    - icon: ':warning:'
+      path: library/graph/Graph.csx
+      title: library/graph/Graph.csx
+    - icon: ':question:'
+      path: library/graph/GraphBase.csx
+      title: library/graph/GraphBase.csx
+    - icon: ':heavy_check_mark:'
+      path: library/graph/MST.csx
+      title: library/graph/MST.csx
+    - icon: ':heavy_check_mark:'
+      path: library/graph/SCC.csx
+      title: library/graph/SCC.csx
+    - icon: ':warning:'
+      path: library/graph/SplitCycleTree.csx
+      title: library/graph/SplitCycleTree.csx
+    - icon: ':x:'
+      path: library/graph/TopologicalSort.csx
+      title: library/graph/TopologicalSort.csx
+    - icon: ':x:'
+      path: library/graph/TreeDiameter.csx
+      title: library/graph/TreeDiameter.csx
+    - icon: ':x:'
+      path: library/graph/WarshallFloyd.csx
+      title: library/graph/WarshallFloyd.csx
   - name: library/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -64,6 +102,29 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/UnionFind.test.csx
       title: verify/data-structure/UnionFind.test.csx
+  - name: verify/graph
+    pages:
+    - icon: ':x:'
+      path: verify/graph/BellmannFord.test.csx
+      title: verify/graph/BellmannFord.test.csx
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/Dijkstra.test.csx
+      title: verify/graph/Dijkstra.test.csx
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/MST.test.csx
+      title: verify/graph/MST.test.csx
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/SCC.test.csx
+      title: verify/graph/SCC.test.csx
+    - icon: ':x:'
+      path: verify/graph/TopologicalSort.test.csx
+      title: verify/graph/TopologicalSort.test.csx
+    - icon: ':x:'
+      path: verify/graph/TreeDiameter.test.csx
+      title: verify/graph/TreeDiameter.test.csx
+    - icon: ':x:'
+      path: verify/graph/WarshallFloyd.test.csx
+      title: verify/graph/WarshallFloyd.test.csx
   - name: verify/math
     pages:
     - icon: ':heavy_check_mark:'
