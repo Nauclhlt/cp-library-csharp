@@ -3,13 +3,16 @@ data:
   libraryCategories:
   - name: library/data-structure
     pages:
+    - icon: ':x:'
+      path: library/data-structure/CirnoArray.csx
+      title: CirnoArray
     - icon: ':heavy_check_mark:'
       path: library/data-structure/Deque.csx
       title: Deque
     - icon: ':heavy_check_mark:'
       path: library/data-structure/FenwickTree.csx
       title: Fenwick Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/data-structure/LazySegmentTree.csx
       title: Lazy Segment Tree
     - icon: ':heavy_check_mark:'
@@ -37,6 +40,9 @@ data:
   verificationCategories:
   - name: verify/data-structure
     pages:
+    - icon: ':x:'
+      path: verify/data-structure/CirnoArray.test.csx
+      title: verify/data-structure/CirnoArray.test.csx
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/Deque.test.csx
       title: verify/data-structure/Deque.test.csx

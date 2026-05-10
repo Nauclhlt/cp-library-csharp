@@ -1,14 +1,20 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':x:'
+    path: library/data-structure/CirnoArray.csx
+    title: CirnoArray
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/data-structure/CirnoArray.test.csx
+    title: verify/data-structure/CirnoArray.test.csx
   - icon: ':heavy_check_mark:'
     path: verify/data-structure/LazySegmentTree.test.csx
     title: verify/data-structure/LazySegmentTree.test.csx
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: csx
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -115,11 +121,13 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/data-structure/LazySegmentTree.csx
-  requiredBy: []
+  requiredBy:
+  - library/data-structure/CirnoArray.csx
   timestamp: '2026-05-10 10:54:19+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/data-structure/LazySegmentTree.test.csx
+  - verify/data-structure/CirnoArray.test.csx
 documentation_of: library/data-structure/LazySegmentTree.csx
 layout: document
 title: Lazy Segment Tree
