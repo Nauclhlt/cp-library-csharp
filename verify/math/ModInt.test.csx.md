@@ -56,7 +56,7 @@ data:
   isVerificationFile: true
   path: verify/math/ModInt.test.csx
   requiredBy: []
-  timestamp: '2026-05-10 10:54:19+09:00'
+  timestamp: '2026-05-10 16:17:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/math/ModInt.test.csx

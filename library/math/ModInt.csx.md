@@ -17,38 +17,38 @@ data:
     \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/csharpscript.py\"\
     , line 113, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "/// <summary>\n/// Integer on F_p. (p: prime)\n/// </summary>\n/// <typeparam\
-    \ name=\"T\">Modulus.</typeparam>\npublic readonly struct ModInt<T> : INumber<ModInt<T>>\n\
-    \                                    where T : struct, IMod\n{\n    public static\
-    \ long Mod => default(T).Mod;\n\n    public readonly uint Value;\n\n    public\
-    \ long ValueLong => Value;\n\n    /// <summary>\n    /// Returns 1. Time complexity\
-    \ is O(1).\n    /// </summary>\n    public static ModInt<T> One { get; } = CreateFast(1);\n\
-    \n    /// <summary>\n    /// Returns 0. Time complexity is O(1).\n    /// </summary>\n\
-    \    public static ModInt<T> Zero { get; } = CreateFast(0);\n\n    public static\
-    \ int Radix => 10;\n    public static ModInt<T> MinValue => CreateFast(0);\n \
-    \   public static ModInt<T> MaxValue => CreateFast(default(T).Mod - 1);\n\n  \
-    \  /// <summary>\n    /// Returns the additive identity, 0. Time complexity is\
-    \ O(1).\n    /// </summary>\n    public static ModInt<T> AdditiveIdentity { get;\
-    \ } = CreateFast(0);\n    /// <summary>\n    /// Returns the multiplicative identity,\
-    \ 1. Time complexity is O(1).\n    /// </summary>\n    public static ModInt<T>\
-    \ MultiplicativeIdentity { get; } = CreateFast(1);\n\n    public ModInt(long value)\n\
-    \    {\n        value %= default(T).Mod;\n        if (value < 0) value += default(T).Mod;\n\
-    \        Value = (uint)value;\n    }\n\n    public ModInt(uint value)\n    {\n\
-    \        value %= default(T).Mod;\n        Value = value;\n    }\n\n    private\
-    \ ModInt(uint value, bool dummy)\n    {\n        Value = value;\n    }\n\n   \
-    \ /// <summary>\n    /// Constructs the modint with the value. Can only be used\
-    \ when 0 <= value < MOD. Maybe slightly faster than implicit cast. Time complexity\
-    \ is O(1).\n    /// </summary>\n    [MethodImpl(MethodImplOptions.AggressiveInlining)]\n\
-    \    public static ModInt<T> CreateFast(uint value)\n    {\n        return new\
-    \ ModInt<T>(value, false);\n    }\n\n    /// <summary>\n    /// Calculates the\
-    \ power to e. Time complexity is O(loge)\n    /// </summary>\n    public readonly\
-    \ ModInt<T> Power(long e)\n    {\n        if (e < 0)\n        {\n            return\
-    \ Power(-e).Inv();\n        }\n        else\n        {\n            ulong res\
-    \ = 1;\n            ulong b = Value;\n            while (e > 0)\n            {\n\
-    \                if ((e & 1) == 1) res = res * b % default(T).Mod;\n         \
-    \       b = b * b % default(T).Mod;\n                e >>= 1;\n            }\n\
-    \n            return CreateFast((uint)res);\n        }\n    }\n\n    /// <summary>\n\
-    \    /// Returns the inverse. Do not call this function when 0. Time complexity\
-    \ is O(logp).\n    /// Reference: https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a\n\
+    \ name=\"T\">Modulus.</typeparam>\npublic readonly struct ModInt<T> : INumber<ModInt<T>>,\
+    \ IMinMaxValue<ModInt<T>>\n                                    where T : struct,\
+    \ IMod\n{\n    public static long Mod => default(T).Mod;\n\n    public readonly\
+    \ uint Value;\n\n    public long ValueLong => Value;\n\n    /// <summary>\n  \
+    \  /// Returns 1. Time complexity is O(1).\n    /// </summary>\n    public static\
+    \ ModInt<T> One { get; } = CreateFast(1);\n\n    /// <summary>\n    /// Returns\
+    \ 0. Time complexity is O(1).\n    /// </summary>\n    public static ModInt<T>\
+    \ Zero { get; } = CreateFast(0);\n\n    public static int Radix => 10;\n    public\
+    \ static ModInt<T> MinValue => CreateFast(0);\n    public static ModInt<T> MaxValue\
+    \ => CreateFast(default(T).Mod - 1);\n\n    /// <summary>\n    /// Returns the\
+    \ additive identity, 0. Time complexity is O(1).\n    /// </summary>\n    public\
+    \ static ModInt<T> AdditiveIdentity { get; } = CreateFast(0);\n    /// <summary>\n\
+    \    /// Returns the multiplicative identity, 1. Time complexity is O(1).\n  \
+    \  /// </summary>\n    public static ModInt<T> MultiplicativeIdentity { get; }\
+    \ = CreateFast(1);\n\n    public ModInt(long value)\n    {\n        value %= default(T).Mod;\n\
+    \        if (value < 0) value += default(T).Mod;\n        Value = (uint)value;\n\
+    \    }\n\n    public ModInt(uint value)\n    {\n        value %= default(T).Mod;\n\
+    \        Value = value;\n    }\n\n    private ModInt(uint value, bool dummy)\n\
+    \    {\n        Value = value;\n    }\n\n    /// <summary>\n    /// Constructs\
+    \ the modint with the value. Can only be used when 0 <= value < MOD. Maybe slightly\
+    \ faster than implicit cast. Time complexity is O(1).\n    /// </summary>\n  \
+    \  [MethodImpl(MethodImplOptions.AggressiveInlining)]\n    public static ModInt<T>\
+    \ CreateFast(uint value)\n    {\n        return new ModInt<T>(value, false);\n\
+    \    }\n\n    /// <summary>\n    /// Calculates the power to e. Time complexity\
+    \ is O(loge)\n    /// </summary>\n    public readonly ModInt<T> Power(long e)\n\
+    \    {\n        if (e < 0)\n        {\n            return Power(-e).Inv();\n \
+    \       }\n        else\n        {\n            ulong res = 1;\n            ulong\
+    \ b = Value;\n            while (e > 0)\n            {\n                if ((e\
+    \ & 1) == 1) res = res * b % default(T).Mod;\n                b = b * b % default(T).Mod;\n\
+    \                e >>= 1;\n            }\n\n            return CreateFast((uint)res);\n\
+    \        }\n    }\n\n    /// <summary>\n    /// Returns the inverse. Do not call\
+    \ this function when 0. Time complexity is O(logp).\n    /// Reference: https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a\n\
     \    /// </summary>\n    public readonly ModInt<T> Inv()\n    {\n        long\
     \ x = 1, y = 0;\n        long x1 = 0, y1 = 1;\n        long b = default(T).Mod;\n\
     \        long a = Value;\n\n        while (b != 0)\n        {\n            long\
@@ -177,7 +177,7 @@ data:
   isVerificationFile: false
   path: library/math/ModInt.csx
   requiredBy: []
-  timestamp: '2026-05-10 10:54:19+09:00'
+  timestamp: '2026-05-10 16:17:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/math/ModInt.test.csx
