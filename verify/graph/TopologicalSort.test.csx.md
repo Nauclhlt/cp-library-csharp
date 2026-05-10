@@ -32,12 +32,12 @@ data:
     \ 0);\n}\n\ng.TryTopologicalSort(out List<int> sorted);\n\nfor (int i = 0; i <\
     \ V; i++)\n{\n    io.Print(sorted[i]);\n}\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/GraphBase.csx
   - library/graph/TopologicalSort.csx
+  - library/graph/GraphBase.csx
   isVerificationFile: true
   path: verify/graph/TopologicalSort.test.csx
   requiredBy: []
-  timestamp: '2026-05-10 21:00:58+09:00'
+  timestamp: '2026-05-10 21:30:20+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/graph/TopologicalSort.test.csx

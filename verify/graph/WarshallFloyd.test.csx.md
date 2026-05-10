@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/graph/GraphBase.csx
     title: library/graph/GraphBase.csx
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/WarshallFloyd.csx
     title: library/graph/WarshallFloyd.csx
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C
     links:
@@ -23,7 +23,8 @@ data:
     \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/csharpscript.py\"\
     , line 113, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "#load \"../../library/graph/WarshallFloyd.csx\"\n#load \"../../library/graph/GraphBase.csx\"\
-    \n#load \"../../library/utility/CPIO.csx\"\n// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\n\
+    \n#load \"../../library/graph/DirectedGraph.csx\"\n#load \"../../library/utility/CPIO.csx\"\
+    \n// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\n\
     \nglobal using System.Collections;\nglobal using System.Runtime.CompilerServices;\n\
     global using System.Numerics;\nglobal using System.Diagnostics.CodeAnalysis;\n\
     global using System.Globalization;\n\nCPIO io = new();\n\nint V = io.Int();\n\
@@ -38,13 +39,13 @@ data:
     \     {\n            Console.Write(dist[i, j]);\n        }\n    }\n    Console.WriteLine();\n\
     }\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/GraphBase.csx
   - library/graph/WarshallFloyd.csx
+  - library/graph/GraphBase.csx
   isVerificationFile: true
   path: verify/graph/WarshallFloyd.test.csx
   requiredBy: []
-  timestamp: '2026-05-10 21:00:58+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2026-05-10 21:30:20+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/WarshallFloyd.test.csx
 layout: document

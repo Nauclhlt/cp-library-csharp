@@ -5,7 +5,7 @@ data:
   - icon: ':warning:'
     path: library/graph/BFS.csx
     title: library/graph/BFS.csx
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/BellmannFord.csx
     title: library/graph/BellmannFord.csx
   - icon: ':heavy_check_mark:'
@@ -29,14 +29,14 @@ data:
   - icon: ':x:'
     path: library/graph/TopologicalSort.csx
     title: library/graph/TopologicalSort.csx
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/TreeDiameter.csx
     title: library/graph/TreeDiameter.csx
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/WarshallFloyd.csx
     title: library/graph/WarshallFloyd.csx
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/BellmannFord.test.csx
     title: verify/graph/BellmannFord.test.csx
   - icon: ':heavy_check_mark:'
@@ -51,10 +51,10 @@ data:
   - icon: ':x:'
     path: verify/graph/TopologicalSort.test.csx
     title: verify/graph/TopologicalSort.test.csx
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/TreeDiameter.test.csx
     title: verify/graph/TreeDiameter.test.csx
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/WarshallFloyd.test.csx
     title: verify/graph/WarshallFloyd.test.csx
   _isVerificationFailed: true
