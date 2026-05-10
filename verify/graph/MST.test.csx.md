@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
     title: library/graph/GraphBase.csx
   - icon: ':heavy_check_mark:'
@@ -31,8 +31,8 @@ data:
     {\n    int s = io.Int();\n    int t = io.Int();\n    long w = io.Long();\n\n \
     \   g.AddEdge(s, t, w);\n}\n\nio.Print(g.MinSpanningTreeWeight());\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/GraphBase.csx
   - library/graph/MST.csx
+  - library/graph/GraphBase.csx
   isVerificationFile: true
   path: verify/graph/MST.test.csx
   requiredBy: []

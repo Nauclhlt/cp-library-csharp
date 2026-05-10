@@ -26,7 +26,7 @@ data:
   - icon: ':warning:'
     path: library/graph/SplitCycleTree.csx
     title: library/graph/SplitCycleTree.csx
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/TopologicalSort.csx
     title: library/graph/TopologicalSort.csx
   - icon: ':heavy_check_mark:'
@@ -48,7 +48,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/SCC.test.csx
     title: verify/graph/SCC.test.csx
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/TopologicalSort.test.csx
     title: verify/graph/TopologicalSort.test.csx
   - icon: ':heavy_check_mark:'
@@ -57,9 +57,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/WarshallFloyd.test.csx
     title: verify/graph/WarshallFloyd.test.csx
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -110,7 +110,7 @@ data:
   - library/graph/Graph.csx
   - library/graph/TopologicalSort.csx
   timestamp: '2026-05-10 21:00:58+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/BellmannFord.test.csx
   - verify/graph/SCC.test.csx

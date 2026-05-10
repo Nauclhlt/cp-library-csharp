@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/BellmannFord.csx
     title: library/graph/BellmannFord.csx
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
     title: library/graph/GraphBase.csx
   _extendedRequiredBy: []
@@ -35,8 +35,8 @@ data:
     \    }\n}\n\nfor (int i = 0; i < V; i++)\n{\n    if (dist[i] == long.MaxValue)\n\
     \        io.Print(\"INF\");\n    else\n        io.Print(dist[i]);\n}\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/BellmannFord.csx
   - library/graph/GraphBase.csx
+  - library/graph/BellmannFord.csx
   isVerificationFile: true
   path: verify/graph/BellmannFord.test.csx
   requiredBy: []

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.csx
     title: library/graph/Dijkstra.csx
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
     title: library/graph/GraphBase.csx
   _extendedRequiredBy: []

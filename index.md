@@ -44,7 +44,7 @@ data:
     - icon: ':warning:'
       path: library/graph/Graph.csx
       title: library/graph/Graph.csx
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/GraphBase.csx
       title: library/graph/GraphBase.csx
     - icon: ':heavy_check_mark:'
@@ -56,7 +56,7 @@ data:
     - icon: ':warning:'
       path: library/graph/SplitCycleTree.csx
       title: library/graph/SplitCycleTree.csx
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/TopologicalSort.csx
       title: library/graph/TopologicalSort.csx
     - icon: ':heavy_check_mark:'
@@ -116,7 +116,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/SCC.test.csx
       title: verify/graph/SCC.test.csx
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/graph/TopologicalSort.test.csx
       title: verify/graph/TopologicalSort.test.csx
     - icon: ':heavy_check_mark:'
