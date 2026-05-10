@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structure/CirnoArray.csx
     title: CirnoArray
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structure/LazySegmentTree.csx
     title: Lazy Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
     links:
@@ -41,7 +41,7 @@ data:
   path: verify/data-structure/CirnoArray.test.csx
   requiredBy: []
   timestamp: '2026-05-10 16:08:07+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data-structure/CirnoArray.test.csx
 layout: document

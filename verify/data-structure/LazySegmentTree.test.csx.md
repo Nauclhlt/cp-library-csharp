@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/data-structure/LazySegmentTree.csx
     title: Lazy Segment Tree
   _extendedRequiredBy: []

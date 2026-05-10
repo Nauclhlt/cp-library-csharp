@@ -70,29 +70,27 @@ data:
     \n        ModInt<T> inv = right.Inv();\n        return left * inv;\n    }\n\n\
     \    public static ModInt<T> operator %(ModInt<T> left, ModInt<T> right)\n   \
     \ {\n        throw new NotImplementedException();\n    }\n\n    public static\
-    \ bool operator <(ModInt<T> left, ModInt<T> right)\n    {\n        throw new NotImplementedException();\n\
-    \    }\n\n    public static bool operator >(ModInt<T> left, ModInt<T> right)\n\
-    \    {\n        throw new NotImplementedException();\n    }\n\n    public static\
-    \ bool operator <=(ModInt<T> left, ModInt<T> right)\n    {\n        throw new\
-    \ NotImplementedException();\n    }\n\n    public static bool operator >=(ModInt<T>\
-    \ left, ModInt<T> right)\n    {\n        throw new NotImplementedException();\n\
-    \    }\n\n    [MethodImpl(256)]\n    public static bool operator ==(ModInt<T>\
-    \ left, ModInt<T> right) => left.Value == right.Value;\n\n    [MethodImpl(256)]\n\
-    \    public static bool operator !=(ModInt<T> left, ModInt<T> right) => !(left\
-    \ == right);\n\n    [MethodImpl(256)]\n    public static ModInt<T> operator ++(ModInt<T>\
-    \ self) => CreateFast((self.Value + 1) % default(T).Mod);\n\n    [MethodImpl(256)]\n\
-    \    public static ModInt<T> operator --(ModInt<T> self) => CreateFast((self.Value\
-    \ + default(T).Mod - 1) % default(T).Mod);\n\n    [MethodImpl(256)]\n    public\
-    \ bool Equals(ModInt<T> other) => Value == other.Value;\n\n    [MethodImpl(256)]\n\
-    \    public override bool Equals(object other)\n    {\n        if (other is ModInt<T>\
-    \ m)\n        {\n            return this == m;\n        }\n        else return\
-    \ false;\n    }\n\n    [MethodImpl(256)]\n    public override int GetHashCode()\
-    \ => Value.GetHashCode();\n\n    [MethodImpl(256)]\n    public static implicit\
-    \ operator ModInt<T>(long v) => new(v);\n\n    [MethodImpl(256)]\n    public static\
-    \ implicit operator ModInt<T>(int v) => new(v);\n\n    public override string\
-    \ ToString() => Value.ToString();\n\n    public string ToString(string format,\
-    \ IFormatProvider provider) => Value.ToString(format, provider);\n\n    #region\
-    \ INumberBase<TSelf> Implementation\n\n    public static ModInt<T> Abs(ModInt<T>\
+    \ bool operator <(ModInt<T> left, ModInt<T> right) => left.Value < right.Value;\n\
+    \n    public static bool operator >(ModInt<T> left, ModInt<T> right) => left.Value\
+    \ > right.Value;\n\n    public static bool operator <=(ModInt<T> left, ModInt<T>\
+    \ right) => left.Value <= right.Value;\n\n    public static bool operator >=(ModInt<T>\
+    \ left, ModInt<T> right) => left.Value >= right.Value;\n\n    [MethodImpl(256)]\n\
+    \    public static bool operator ==(ModInt<T> left, ModInt<T> right) => left.Value\
+    \ == right.Value;\n\n    [MethodImpl(256)]\n    public static bool operator !=(ModInt<T>\
+    \ left, ModInt<T> right) => !(left == right);\n\n    [MethodImpl(256)]\n    public\
+    \ static ModInt<T> operator ++(ModInt<T> self) => CreateFast((self.Value + 1)\
+    \ % default(T).Mod);\n\n    [MethodImpl(256)]\n    public static ModInt<T> operator\
+    \ --(ModInt<T> self) => CreateFast((self.Value + default(T).Mod - 1) % default(T).Mod);\n\
+    \n    [MethodImpl(256)]\n    public bool Equals(ModInt<T> other) => Value == other.Value;\n\
+    \n    [MethodImpl(256)]\n    public override bool Equals(object other)\n    {\n\
+    \        if (other is ModInt<T> m)\n        {\n            return this == m;\n\
+    \        }\n        else return false;\n    }\n\n    [MethodImpl(256)]\n    public\
+    \ override int GetHashCode() => Value.GetHashCode();\n\n    [MethodImpl(256)]\n\
+    \    public static implicit operator ModInt<T>(long v) => new(v);\n\n    [MethodImpl(256)]\n\
+    \    public static implicit operator ModInt<T>(int v) => new(v);\n\n    public\
+    \ override string ToString() => Value.ToString();\n\n    public string ToString(string\
+    \ format, IFormatProvider provider) => Value.ToString(format, provider);\n\n \
+    \   #region INumberBase<TSelf> Implementation\n\n    public static ModInt<T> Abs(ModInt<T>\
     \ value) => value;\n    public static bool IsCanonical(ModInt<T> value) => true;\n\
     \    public static bool IsComplexNumber(ModInt<T> value) => false;\n    public\
     \ static bool IsFinite(ModInt<T> value) => true;\n    public static bool IsImaginaryNumber(ModInt<T>\
@@ -177,7 +175,7 @@ data:
   isVerificationFile: false
   path: library/math/ModInt.csx
   requiredBy: []
-  timestamp: '2026-05-10 16:17:04+09:00'
+  timestamp: '2026-05-10 16:26:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/math/ModInt.test.csx
