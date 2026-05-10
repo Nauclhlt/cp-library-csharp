@@ -3,7 +3,11 @@
 #load "../../library/math/ModInt.csx"
 // verification-helper: PROBLEM https://judge.yosupo.jp/problem/range_affine_range_sum
 
+global using System.Collections;
 global using System.Runtime.CompilerServices;
+global using System.Numerics;
+global using System.Diagnostics.CodeAnalysis;
+global using System.Globalization;
 using MINT = ModInt<Mod998244353>;
 
 CPIO io = new();
