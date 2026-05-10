@@ -122,7 +122,7 @@ data:
   - verify/data-structure/LazySegmentTree.test.csx
 documentation_of: library/data-structure/LazySegmentTree.csx
 layout: document
-title: Segment Tree
+title: Lazy Segment Tree
 ---
 
 #### 説明

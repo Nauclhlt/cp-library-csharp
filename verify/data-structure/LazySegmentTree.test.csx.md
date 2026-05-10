@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':x:'
     path: library/data-structure/LazySegmentTree.csx
-    title: Segment Tree
+    title: Lazy Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: true
@@ -26,18 +26,19 @@ data:
     global using System.Globalization;\nusing MINT = ModInt<Mod998244353>;\n\nCPIO\
     \ io = new();\n\nint N = io.Int();\nint Q = io.Int();\n\nvar seg = new LazySegmentTree<MINT,\
     \ (MINT b, MINT c)>(N, (x, y) => x + y, (x, a, l) => x * a.b + l * a.c, (x, y)\
-    \ => (x.b * y.c, x.b * y.b + y.c), 0L);\nMINT[] arr = new MINT[N];\nseg.Build(arr);\n\
-    \nwhile (Q-- > 0)\n{\n    int t = io.Int();\n\n    if (t == 0)\n    {\n      \
-    \  int l = io.Int();\n        int r = io.Int();\n        long b = io.Long();\n\
-    \        long c = io.Long();\n        seg.Update(l, r, (b, c));\n    }\n    else\n\
-    \    {\n        int l = io.Int();\n        int r = io.Int();\n        io.Print(seg.Fold(l,\
-    \ r).Value.ToString());\n    }\n}\n\nConsole.Out.Flush();"
+    \ => (x.b * y.c, x.b * y.b + y.c), 0L);\nMINT[] arr = new MINT[N];\nfor (int i\
+    \ = 0; i < N; i++) arr[i] = io.Long();\nseg.Build(arr);\n\nwhile (Q-- > 0)\n{\n\
+    \    int t = io.Int();\n\n    if (t == 0)\n    {\n        int l = io.Int();\n\
+    \        int r = io.Int();\n        long b = io.Long();\n        long c = io.Long();\n\
+    \        seg.Update(l, r, (b, c));\n    }\n    else\n    {\n        int l = io.Int();\n\
+    \        int r = io.Int();\n        io.Print(seg.Fold(l, r).Value.ToString());\n\
+    \    }\n}\n\nConsole.Out.Flush();"
   dependsOn:
   - library/data-structure/LazySegmentTree.csx
   isVerificationFile: true
   path: verify/data-structure/LazySegmentTree.test.csx
   requiredBy: []
-  timestamp: '2026-05-10 11:09:30+09:00'
+  timestamp: '2026-05-10 11:25:57+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/data-structure/LazySegmentTree.test.csx
