@@ -2,7 +2,7 @@
 /// Integer on F_p. (p: prime)
 /// </summary>
 /// <typeparam name="T">Modulus.</typeparam>
-public readonly struct ModInt<T> : INumber<ModInt<T>>
+public readonly struct ModInt<T> : INumber<ModInt<T>>, IMinMaxValue<ModInt<T>>
                                     where T : struct, IMod
 {
     public static long Mod => default(T).Mod;
