@@ -17,6 +17,7 @@ int Q = io.Int();
 
 var seg = new LazySegmentTree<MINT, (MINT b, MINT c)>(N, (x, y) => x + y, (x, a, l) => x * a.b + l * a.c, (x, y) => (x.b * y.c, x.b * y.b + y.c), 0L);
 MINT[] arr = new MINT[N];
+for (int i = 0; i < N; i++) arr[i] = io.Long();
 seg.Build(arr);
 
 while (Q-- > 0)
