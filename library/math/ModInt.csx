@@ -146,25 +146,13 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>, IMinMaxValue<ModInt<T>>
         throw new NotImplementedException();
     }
 
-    public static bool operator <(ModInt<T> left, ModInt<T> right)
-    {
-        throw new NotImplementedException();
-    }
+    public static bool operator <(ModInt<T> left, ModInt<T> right) => left.Value < right.Value;
 
-    public static bool operator >(ModInt<T> left, ModInt<T> right)
-    {
-        throw new NotImplementedException();
-    }
+    public static bool operator >(ModInt<T> left, ModInt<T> right) => left.Value > right.Value;
 
-    public static bool operator <=(ModInt<T> left, ModInt<T> right)
-    {
-        throw new NotImplementedException();
-    }
+    public static bool operator <=(ModInt<T> left, ModInt<T> right) => left.Value <= right.Value;
 
-    public static bool operator >=(ModInt<T> left, ModInt<T> right)
-    {
-        throw new NotImplementedException();
-    }
+    public static bool operator >=(ModInt<T> left, ModInt<T> right) => left.Value >= right.Value;
 
     [MethodImpl(256)]
     public static bool operator ==(ModInt<T> left, ModInt<T> right) => left.Value == right.Value;
