@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structure/FenwickTree.csx
       title: Fenwick Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structure/LazySegmentTree.csx
       title: Lazy Segment Tree
     - icon: ':heavy_check_mark:'
@@ -43,7 +43,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/FenwickTree.test.csx
       title: verify/data-structure/FenwickTree.test.csx
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/data-structure/LazySegmentTree.test.csx
       title: verify/data-structure/LazySegmentTree.test.csx
     - icon: ':heavy_check_mark:'

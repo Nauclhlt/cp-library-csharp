@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/data-structure/LazySegmentTree.test.csx
     title: verify/data-structure/LazySegmentTree.test.csx
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -117,7 +117,7 @@ data:
   path: library/data-structure/LazySegmentTree.csx
   requiredBy: []
   timestamp: '2026-05-10 10:54:19+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data-structure/LazySegmentTree.test.csx
 documentation_of: library/data-structure/LazySegmentTree.csx
