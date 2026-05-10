@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':x:'
     path: library/data-structure/LazySegmentTree.csx
-    title: library/data-structure/LazySegmentTree.csx
+    title: Segment Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: true
@@ -31,13 +31,13 @@ data:
     \  int l = io.Int();\n        int r = io.Int();\n        long b = io.Long();\n\
     \        long c = io.Long();\n        seg.Update(l, r, (b, c));\n    }\n    else\n\
     \    {\n        int l = io.Int();\n        int r = io.Int();\n        io.Print(seg.Fold(l,\
-    \ r));\n    }\n}\n\nConsole.Out.Flush();"
+    \ r).Value.ToString());\n    }\n}\n\nConsole.Out.Flush();"
   dependsOn:
   - library/data-structure/LazySegmentTree.csx
   isVerificationFile: true
   path: verify/data-structure/LazySegmentTree.test.csx
   requiredBy: []
-  timestamp: '2026-05-10 11:02:50+09:00'
+  timestamp: '2026-05-10 11:09:30+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/data-structure/LazySegmentTree.test.csx

@@ -11,7 +11,7 @@ data:
       title: Fenwick Tree
     - icon: ':x:'
       path: library/data-structure/LazySegmentTree.csx
-      title: library/data-structure/LazySegmentTree.csx
+      title: Segment Tree
     - icon: ':heavy_check_mark:'
       path: library/data-structure/SegmentTree.csx
       title: Segment Tree
