@@ -21,8 +21,10 @@ data:
     , line 113, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "#load \"../../library/data-structure/LazySegmentTree.csx\"\n#load \"../../library/utility/CPIO.csx\"\
     \n#load \"../../library/math/ModInt.csx\"\n// verification-helper: PROBLEM https://judge.yosupo.jp/problem/range_affine_range_sum\n\
-    \nglobal using System.Runtime.CompilerServices;\nusing MINT = ModInt<Mod998244353>;\n\
-    \nCPIO io = new();\n\nint N = io.Int();\nint Q = io.Int();\n\nvar seg = new LazySegmentTree<MINT,\
+    \nglobal using System.Collections;\nglobal using System.Runtime.CompilerServices;\n\
+    global using System.Numerics;\nglobal using System.Diagnostics.CodeAnalysis;\n\
+    global using System.Globalization;\nusing MINT = ModInt<Mod998244353>;\n\nCPIO\
+    \ io = new();\n\nint N = io.Int();\nint Q = io.Int();\n\nvar seg = new LazySegmentTree<MINT,\
     \ (MINT b, MINT c)>(N, (x, y) => x + y, (x, a, l) => x * a.b + l * a.c, (x, y)\
     \ => (x.b * y.c, x.b * y.b + y.c), 0L);\nMINT[] arr = new MINT[N];\nseg.Build(arr);\n\
     \nwhile (Q-- > 0)\n{\n    int t = io.Int();\n\n    if (t == 0)\n    {\n      \
@@ -35,7 +37,7 @@ data:
   isVerificationFile: true
   path: verify/data-structure/LazySegmentTree.test.csx
   requiredBy: []
-  timestamp: '2026-05-10 10:54:19+09:00'
+  timestamp: '2026-05-10 11:02:50+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/data-structure/LazySegmentTree.test.csx
