@@ -1,6 +1,6 @@
 #load "../../library/graph/TopologicalSort.csx"
 #load "../../library/utility/CPIO.csx"
-// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
+// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A
 
 global using System.Collections;
 global using System.Runtime.CompilerServices;
@@ -23,11 +23,6 @@ for (int i = 0; i < E; i++)
     g.AddEdge(s, t, 0);
 }
 
-g.TryTopologicalSort(out List<int> sorted);
-
-for (int i = 0; i < V; i++)
-{
-    io.Print(sorted[i]);
-}
+io.Print(g.TryTopologicalSort(out List<int> _) ? "0" : "1");
 
 Console.Out.Flush();
