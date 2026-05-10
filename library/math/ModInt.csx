@@ -370,3 +370,16 @@ public readonly struct ModInt<T> : INumber<ModInt<T>>
 
     #endregion
 }
+
+/// <summary>
+/// Used to specify modulus.
+/// </summary>
+public interface IMod
+{
+    public uint Mod { get; }
+}
+
+public readonly struct Mod998244353 : IMod { public uint Mod => 998244353; }
+public readonly struct Mod1000000007 : IMod { public uint Mod => 1000000007; }
+public readonly struct Mod897581057 : IMod { public uint Mod => 897581057; }
+public readonly struct Mod880803841 : IMod { public uint Mod => 880803841; }
