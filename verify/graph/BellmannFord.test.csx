@@ -1,5 +1,5 @@
 #load "../../library/graph/BellmannFord.csx"
-#load "../../library/graph/Graph.csx"
+#load "../../library/graph/DirectedGraph.csx"
 #load "../../library/utility/CPIO.csx"
 // verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
 
@@ -15,7 +15,7 @@ int V = io.Int();
 int E = io.Int();
 int r = io.Int();
 
-Graph<long> g = new(V);
+DirectedGraph<long> g = new(V);
 
 for (int i = 0; i < E; i++)
 {

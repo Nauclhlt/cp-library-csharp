@@ -1,6 +1,7 @@
 #load "../../library/graph/TreeDiameter.csx"
+#load "../../library/graph/BFS.csx"
 #load "../../library/utility/CPIO.csx"
-// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
+// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
 
 global using System.Collections;
 global using System.Runtime.CompilerServices;

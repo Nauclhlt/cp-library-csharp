@@ -1,5 +1,6 @@
 #load "../../library/graph/WarshallFloyd.csx"
 #load "../../library/graph/GraphBase.csx"
+#load "../../library/graph/DirectedGraph.csx"
 #load "../../library/utility/CPIO.csx"
 // verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C
 

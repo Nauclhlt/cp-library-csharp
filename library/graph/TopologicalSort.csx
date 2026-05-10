@@ -17,15 +17,15 @@ public partial class DirectedGraph<T>
             deg[_directionAwareEdges[i].To]++;
         }
 
-        Queue<int> queue = new();
+        Stack<int> stack = new();
         for (int i = 0; i < _vertexCount; i++)
         {
-            if (deg[i] == 0) queue.Enqueue(i);
+            if (deg[i] == 0) stack.Push(i);
         }
 
-        while (queue.Count > 0)
+        while (stack.Count > 0)
         {
-            int next = queue.Dequeue();
+            int next = stack.Pop();
             sorted.Add(next);
 
             List<Edge<T>> p = _adjList[next];
@@ -36,7 +36,7 @@ public partial class DirectedGraph<T>
 
                 if (deg[p[i].To] == 0)
                 {
-                    queue.Enqueue(p[i].To);
+                    stack.Push(p[i].To);
                 }
             }
         }
