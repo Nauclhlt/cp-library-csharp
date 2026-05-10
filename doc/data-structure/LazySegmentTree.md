@@ -1,6 +1,6 @@
 ---
 title: Segment Tree
-documentation_of: //library/data-structure/SegmentTree.csx
+documentation_of: //library/data-structure/LazySegmentTree.csx
 ---
 
 #### 説明

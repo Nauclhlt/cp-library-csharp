@@ -35,7 +35,7 @@ while (Q-- > 0)
     {
         int l = io.Int();
         int r = io.Int();
-        io.Print(seg.Fold(l, r));
+        io.Print(seg.Fold(l, r).Value.ToString());
     }
 }
 
