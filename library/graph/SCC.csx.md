@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
-    title: library/graph/GraphBase.csx
+    title: Graph Base
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -51,8 +51,19 @@ data:
   - verify/graph/SCC.test.csx
 documentation_of: library/graph/SCC.csx
 layout: document
-redirect_from:
-- /library/library/graph/SCC.csx
-- /library/library/graph/SCC.csx.html
-title: library/graph/SCC.csx
+title: "Strongly Connected Components(\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3)"
 ---
+
+#### 説明
+
+有向グラフを強連結成分分解する.
+
+強連結成分とは, 含まれる任意の $2$ 頂点間にパスが存在するような部分グラフのうち極大なもの. 強連結成分をひとまとまりに見たとき, DAGを成すので, トポロジカルソートの順に結果を返す.
+
+計算量はグラフの頂点数, 辺数を $V, E$ として $O(V+E)$.
+
+#### 注意点
+- とくになし
+
+#### 関数
+- `DivideSCC()`: 強連結成分のリストを返す

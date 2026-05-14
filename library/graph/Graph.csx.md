@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
-    title: library/graph/GraphBase.csx
+    title: Graph Base
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -56,8 +56,17 @@ data:
   verifiedWith: []
 documentation_of: library/graph/Graph.csx
 layout: document
-redirect_from:
-- /library/library/graph/Graph.csx
-- /library/library/graph/Graph.csx.html
-title: library/graph/Graph.csx
+title: "Graph(\u7121\u5411\u30B0\u30E9\u30D5)"
 ---
+
+#### 説明
+
+無向グラフを扱う.
+
+#### 注意点
+- とくになし
+
+#### 関数
+- `AddEdge(a, b, weight)`: $a$ と $b$ を結ぶ重み $weight$ の辺を追加する
+- `CreateComplement()`: 補グラフを作成して返す
+- `IsBipartite()`: 二部グラフかどうかを判定する

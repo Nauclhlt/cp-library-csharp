@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
-    title: library/graph/GraphBase.csx
+    title: Graph Base
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -38,8 +38,15 @@ data:
   verifiedWith: []
 documentation_of: library/graph/BFS.csx
 layout: document
-redirect_from:
-- /library/library/graph/BFS.csx
-- /library/library/graph/BFS.csx.html
-title: library/graph/BFS.csx
+title: "BFS(\u5E45\u512A\u5148\u63A2\u7D22)"
 ---
+
+#### 説明
+
+木において, 異なる $2$ 頂点を結ぶ単純パスは一意に定まる. よって, 単一始点最短経路の問題はBFSを用いれば, グラフの頂点数を $V$ として $O(V)$ 時間で解ける.
+
+#### 注意点
+- 一般の無向グラフでは最短経路を返すとは限らない
+
+#### 関数
+- `BfsFrom(n)`: (木の場合)頂点 $n$ から各頂点への最短距離を表す配列を返す

@@ -4,25 +4,26 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: library/graph/BFS.csx
-    title: library/graph/BFS.csx
+    title: "BFS(\u5E45\u512A\u5148\u63A2\u7D22)"
   - icon: ':heavy_check_mark:'
     path: library/graph/BellmannFord.csx
-    title: library/graph/BellmannFord.csx
+    title: "Bellmann-Ford\u6CD5"
   - icon: ':heavy_check_mark:'
     path: library/graph/Dijkstra.csx
-    title: library/graph/Dijkstra.csx
+    title: "Dijkstra\u6CD5"
   - icon: ':warning:'
     path: library/graph/DirectedGraph.csx
-    title: library/graph/DirectedGraph.csx
+    title: "Directed Graph(\u6709\u5411\u30B0\u30E9\u30D5)"
   - icon: ':warning:'
     path: library/graph/Graph.csx
-    title: library/graph/Graph.csx
+    title: "Graph(\u7121\u5411\u30B0\u30E9\u30D5)"
   - icon: ':heavy_check_mark:'
     path: library/graph/MST.csx
-    title: library/graph/MST.csx
+    title: "Minimum/Maximum Spanning Tree(\u30AF\u30E9\u30B9\u30AB\u30EB\u6CD5)"
   - icon: ':heavy_check_mark:'
     path: library/graph/SCC.csx
-    title: library/graph/SCC.csx
+    title: "Strongly Connected Components(\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
+      )"
   - icon: ':warning:'
     path: library/graph/SplitCycleTree.csx
     title: library/graph/SplitCycleTree.csx
@@ -121,8 +122,17 @@ data:
   - verify/graph/TreeDiameter.test.csx
 documentation_of: library/graph/GraphBase.csx
 layout: document
-redirect_from:
-- /library/library/graph/GraphBase.csx
-- /library/library/graph/GraphBase.csx.html
-title: library/graph/GraphBase.csx
+title: Graph Base
 ---
+
+#### 説明
+
+有向, 無向グラフの基底クラス. 共通のデータなどを持つ.
+
+ダイクストラ法, ベルマンフォード法, ワーシャルフロイド法など有向, 無向にかかわらず実装が共通なものはこのクラスに対して定義される.
+
+#### 注意点
+- とくになし
+
+#### 関数
+- `abstract AddEdge(a, b, weight)`: 辺 $(a, b, w)$ を追加する

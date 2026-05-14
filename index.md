@@ -31,28 +31,29 @@ data:
     pages:
     - icon: ':warning:'
       path: library/graph/BFS.csx
-      title: library/graph/BFS.csx
+      title: "BFS(\u5E45\u512A\u5148\u63A2\u7D22)"
     - icon: ':heavy_check_mark:'
       path: library/graph/BellmannFord.csx
-      title: library/graph/BellmannFord.csx
+      title: "Bellmann-Ford\u6CD5"
     - icon: ':heavy_check_mark:'
       path: library/graph/Dijkstra.csx
-      title: library/graph/Dijkstra.csx
+      title: "Dijkstra\u6CD5"
     - icon: ':warning:'
       path: library/graph/DirectedGraph.csx
-      title: library/graph/DirectedGraph.csx
+      title: "Directed Graph(\u6709\u5411\u30B0\u30E9\u30D5)"
     - icon: ':warning:'
       path: library/graph/Graph.csx
-      title: library/graph/Graph.csx
+      title: "Graph(\u7121\u5411\u30B0\u30E9\u30D5)"
     - icon: ':heavy_check_mark:'
       path: library/graph/GraphBase.csx
-      title: library/graph/GraphBase.csx
+      title: Graph Base
     - icon: ':heavy_check_mark:'
       path: library/graph/MST.csx
-      title: library/graph/MST.csx
+      title: "Minimum/Maximum Spanning Tree(\u30AF\u30E9\u30B9\u30AB\u30EB\u6CD5)"
     - icon: ':heavy_check_mark:'
       path: library/graph/SCC.csx
-      title: library/graph/SCC.csx
+      title: "Strongly Connected Components(\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
+        )"
     - icon: ':warning:'
       path: library/graph/SplitCycleTree.csx
       title: library/graph/SplitCycleTree.csx
@@ -68,8 +69,14 @@ data:
   - name: library/math
     pages:
     - icon: ':heavy_check_mark:'
+      path: library/math/Eratosthenes.csx
+      title: Sieve of Eratosthenes
+    - icon: ':heavy_check_mark:'
       path: library/math/ModInt.csx
       title: ModInt
+    - icon: ':x:'
+      path: library/math/SquareMatrix.csx
+      title: Square Matrix
   - name: library/utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -128,8 +135,14 @@ data:
   - name: verify/math
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/math/Eratosthenes.test.csx
+      title: verify/math/Eratosthenes.test.csx
+    - icon: ':heavy_check_mark:'
       path: verify/math/ModInt.test.csx
       title: verify/math/ModInt.test.csx
+    - icon: ':x:'
+      path: verify/math/SquareMatrix.test.csx
+      title: verify/math/SquareMatrix.test.csx
   - name: verify/utility
     pages:
     - icon: ':heavy_check_mark:'

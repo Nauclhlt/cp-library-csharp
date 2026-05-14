@@ -3,10 +3,11 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
-    title: library/graph/GraphBase.csx
+    title: Graph Base
   - icon: ':heavy_check_mark:'
     path: library/graph/SCC.csx
-    title: library/graph/SCC.csx
+    title: "Strongly Connected Components(\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
+      )"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

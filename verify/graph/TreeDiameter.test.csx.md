@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
-    title: library/graph/GraphBase.csx
+    title: Graph Base
   - icon: ':heavy_check_mark:'
     path: library/graph/TreeDiameter.csx
     title: library/graph/TreeDiameter.csx

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
-    title: library/graph/GraphBase.csx
+    title: Graph Base
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -54,8 +54,19 @@ data:
   - verify/graph/BellmannFord.test.csx
 documentation_of: library/graph/BellmannFord.csx
 layout: document
-redirect_from:
-- /library/library/graph/BellmannFord.csx
-- /library/library/graph/BellmannFord.csx.html
-title: library/graph/BellmannFord.csx
+title: "Bellmann-Ford\u6CD5"
 ---
+
+#### 説明
+
+ベルマンフォード(Bellmann-Ford)法で単一始点最短経路問題を解く.
+
+計算量はグラフの頂点数, 辺数を $V, E$ として $O(VE)$.
+
+各辺について, 最短距離が更新できるならするという操作を $V-1$ 回繰り返すことで最短距離が求まる. このとき, $V$ 回目の繰り返しでも更新がまだ起こるのであれば, グラフは負閉路を含む.
+
+#### 注意点
+- 負辺を持たないグラフならダイクストラ法を使うのが速い
+
+#### 関数
+- `BellmannFordFrom(n)`: 頂点 $n$ から各頂点への最短距離を表す配列を返す

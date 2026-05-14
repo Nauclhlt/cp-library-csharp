@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
-    title: library/graph/GraphBase.csx
+    title: Graph Base
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -40,8 +40,15 @@ data:
   verifiedWith: []
 documentation_of: library/graph/DirectedGraph.csx
 layout: document
-redirect_from:
-- /library/library/graph/DirectedGraph.csx
-- /library/library/graph/DirectedGraph.csx.html
-title: library/graph/DirectedGraph.csx
+title: "Directed Graph(\u6709\u5411\u30B0\u30E9\u30D5)"
 ---
+
+#### 説明
+
+有向グラフを扱う.
+
+#### 注意点
+- とくになし
+
+#### 関数
+- `AddEdge(a, b, weight)`: $a$ から $b$ への重み $weight$ の辺を追加する
