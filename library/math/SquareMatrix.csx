@@ -144,7 +144,7 @@ public sealed class SquareMatrix<T> : IEquatable<SquareMatrix<T>>
             throw new InvalidOperationException();
         }
 
-        SquareMatrix<T> result = new(left.Size);
+        SquareMatrix<T> result = Zero(left.Size);
 
         for (int r = 0; r < result.Size; r++)
         {
