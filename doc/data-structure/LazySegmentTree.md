@@ -1,5 +1,5 @@
 ---
-title: Lazy Segment Tree
+title: Lazy Segment Tree(遅延評価セグメント木)
 documentation_of: //library/data-structure/LazySegmentTree.csx
 ---
 

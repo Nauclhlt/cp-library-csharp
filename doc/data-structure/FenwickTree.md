@@ -1,5 +1,5 @@
 ---
-title: Fenwick Tree
+title: Fenwick Tree(BIT)
 documentation_of: //library/data-structure/FenwickTree.csx
 ---
 

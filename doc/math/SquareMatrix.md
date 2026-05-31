@@ -1,5 +1,5 @@
 ---
-title: Square Matrix
+title: Square Matrix(正方行列)
 documentation_of: //library/math/SquareMatrix.csx
 ---
 
@@ -8,7 +8,7 @@ documentation_of: //library/math/SquareMatrix.csx
 正方行列を扱う.
 
 #### 注意点
-- $T$ はいい感じに演算子系のインターフェースを実装してないとダメ
+- $T$ はいい感じに演算子系のインターフェースを実装してね
 
 #### 関数
 - `Power(e)`: $e$ 乗を求める

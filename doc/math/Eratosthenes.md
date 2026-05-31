@@ -1,5 +1,5 @@
 ---
-title: Sieve of Eratosthenes
+title: Sieve of Eratosthenes(エラトステネスの篩)
 documentation_of: //library/math/Eratosthenes.csx
 ---
 
