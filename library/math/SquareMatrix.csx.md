@@ -98,7 +98,7 @@ data:
   - verify/math/SquareMatrix.test.csx
 documentation_of: library/math/SquareMatrix.csx
 layout: document
-title: Square Matrix
+title: "Square Matrix(\u6B63\u65B9\u884C\u5217)"
 ---
 
 #### 説明
@@ -106,7 +106,7 @@ title: Square Matrix
 正方行列を扱う.
 
 #### 注意点
-- $T$ はいい感じに演算子系のインターフェースを実装してないとダメ
+- $T$ はいい感じに演算子系のインターフェースを実装してね
 
 #### 関数
 - `Power(e)`: $e$ 乗を求める

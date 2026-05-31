@@ -54,7 +54,7 @@ data:
   - verify/data-structure/FenwickTree.test.csx
 documentation_of: library/data-structure/FenwickTree.csx
 layout: document
-title: Fenwick Tree
+title: Fenwick Tree(BIT)
 ---
 
 #### 説明

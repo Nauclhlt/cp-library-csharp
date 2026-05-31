@@ -34,8 +34,8 @@ data:
     \ i < scc.Count; i++)\n{\n    Console.Write(scc[i].Count + \" \");\n    io.Print(scc[i]);\n\
     }\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/GraphBase.csx
   - library/graph/SCC.csx
+  - library/graph/GraphBase.csx
   isVerificationFile: true
   path: verify/graph/SCC.test.csx
   requiredBy: []

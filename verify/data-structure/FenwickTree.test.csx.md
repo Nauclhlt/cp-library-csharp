@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/data-structure/FenwickTree.csx
-    title: Fenwick Tree
+    title: Fenwick Tree(BIT)
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

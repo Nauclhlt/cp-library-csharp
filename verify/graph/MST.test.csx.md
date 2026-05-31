@@ -35,8 +35,8 @@ data:
     \   g.AddEdge(s, t, w);\n}\n\nio.Print(g.MinSpanningTreeWeight());\n\nConsole.Out.Flush();"
   dependsOn:
   - library/graph/GraphBase.csx
-  - library/graph/MST.csx
   - library/graph/Graph.csx
+  - library/graph/MST.csx
   isVerificationFile: true
   path: verify/graph/MST.test.csx
   requiredBy: []

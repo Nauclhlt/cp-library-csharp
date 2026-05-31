@@ -31,21 +31,45 @@ data:
     \      T max = T.Zero;\n        int v = 0;\n        for (int i = 0; i < _vertexCount;\
     \ i++)\n        {\n            if (dist[i] > max)\n            {\n           \
     \     max = dist[i];\n                v = i;\n            }\n        }\n\n   \
-    \     dist = this.BfsFrom(v);\n\n        return dist.Max();\n    }\n}"
+    \     dist = this.BfsFrom(v);\n\n        return dist.Max();\n    }\n\n    public\
+    \ (int, int) GetDiameterPair(out T diameter)\n    {\n        if (_vertexCount\
+    \ - 1 != _edges.Count)\n        {\n            throw new InvalidOperationException(\"\
+    Not a tree graph.\");\n        }\n\n        T[] dist = this.BfsFrom(0);\n\n  \
+    \      T max = T.Zero;\n        int v = 0;\n        for (int i = 0; i < _vertexCount;\
+    \ i++)\n        {\n            if (dist[i] > max)\n            {\n           \
+    \     max = dist[i];\n                v = i;\n            }\n        }\n\n   \
+    \     dist = this.BfsFrom(v);\n        diameter = dist.Max();\n        int u =\
+    \ -1;\n        for (int i = 0; i < _vertexCount; i++)\n        {\n           \
+    \ if (diameter == dist[i])\n            {\n                u = i;\n          \
+    \      break;\n            }\n        }\n\n        return (u, v);\n    }\n}"
   dependsOn:
-  - library/graph/Graph.csx
   - library/graph/GraphBase.csx
+  - library/graph/Graph.csx
   isVerificationFile: false
   path: library/graph/TreeDiameter.csx
   requiredBy: []
-  timestamp: '2026-05-31 11:56:47+09:00'
+  timestamp: '2026-05-31 18:02:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/TreeDiameter.test.csx
 documentation_of: library/graph/TreeDiameter.csx
 layout: document
-redirect_from:
-- /library/library/graph/TreeDiameter.csx
-- /library/library/graph/TreeDiameter.csx.html
-title: library/graph/TreeDiameter.csx
+title: "Tree Diameter(\u6728\u306E\u76F4\u5F84)"
 ---
+
+#### 説明
+
+木上の単純パスに含まれる辺の数の最大値をその木の直径という.
+
+これは以下のアルゴリズムによって, 頂点数を $V$ として $O(V)$ 時間で求まる.
+
+- 適当な頂点から最遠の頂点 $v$ をひとつ求める
+- $v$ から最遠の頂点 $u$ をひとつ求める
+- $u$ と $v$ を結ぶ単純パスに含まれる辺の数が直径である. すなわち, $u$ と $v$ は直径の両端の頂点である
+
+#### 注意点
+- とくになし
+
+#### 関数
+- `GetDiameter()`: 木の直径を求める
+- `GetDiameterPair(out diameter)`: 木の直径の両端の頂点ペアをひとつ求める. そのさい $diameter$ に直径の値も格納される

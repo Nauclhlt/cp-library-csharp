@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: library/math/SquareMatrix.csx
-    title: Square Matrix
+    title: "Square Matrix(\u6B63\u65B9\u884C\u5217)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

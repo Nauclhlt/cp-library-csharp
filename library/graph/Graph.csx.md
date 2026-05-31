@@ -13,7 +13,7 @@ data:
     title: "Minimum/Maximum Spanning Tree(\u30AF\u30E9\u30B9\u30AB\u30EB\u6CD5)"
   - icon: ':heavy_check_mark:'
     path: library/graph/TreeDiameter.csx
-    title: library/graph/TreeDiameter.csx
+    title: "Tree Diameter(\u6728\u306E\u76F4\u5F84)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/graph/EulerTour.test.csx

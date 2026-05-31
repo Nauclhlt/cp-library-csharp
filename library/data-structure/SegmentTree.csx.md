@@ -80,7 +80,7 @@ data:
   - verify/data-structure/SegmentTree.test.csx
 documentation_of: library/data-structure/SegmentTree.csx
 layout: document
-title: Segment Tree
+title: "Segment Tree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
 ---
 
 #### 説明

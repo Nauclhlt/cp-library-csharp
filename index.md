@@ -11,13 +11,14 @@ data:
       title: Deque
     - icon: ':heavy_check_mark:'
       path: library/data-structure/FenwickTree.csx
-      title: Fenwick Tree
+      title: Fenwick Tree(BIT)
     - icon: ':heavy_check_mark:'
       path: library/data-structure/LazySegmentTree.csx
-      title: Lazy Segment Tree
+      title: "Lazy Segment Tree(\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\
+        \u6728)"
     - icon: ':heavy_check_mark:'
       path: library/data-structure/SegmentTree.csx
-      title: Segment Tree
+      title: "Segment Tree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
     - icon: ':heavy_check_mark:'
       path: library/data-structure/Set.csx
       title: Set
@@ -62,10 +63,11 @@ data:
       title: library/graph/SplitCycleTree.csx
     - icon: ':heavy_check_mark:'
       path: library/graph/TopologicalSort.csx
-      title: library/graph/TopologicalSort.csx
+      title: "Topological Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
+        )"
     - icon: ':heavy_check_mark:'
       path: library/graph/TreeDiameter.csx
-      title: library/graph/TreeDiameter.csx
+      title: "Tree Diameter(\u6728\u306E\u76F4\u5F84)"
     - icon: ':heavy_check_mark:'
       path: library/graph/WarshallFloyd.csx
       title: library/graph/WarshallFloyd.csx
@@ -73,13 +75,14 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: library/math/Eratosthenes.csx
-      title: Sieve of Eratosthenes
+      title: "Sieve of Eratosthenes(\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\
+        \u7BE9)"
     - icon: ':heavy_check_mark:'
       path: library/math/ModInt.csx
       title: ModInt
     - icon: ':heavy_check_mark:'
       path: library/math/SquareMatrix.csx
-      title: Square Matrix
+      title: "Square Matrix(\u6B63\u65B9\u884C\u5217)"
   - name: library/utility
     pages:
     - icon: ':heavy_check_mark:'
