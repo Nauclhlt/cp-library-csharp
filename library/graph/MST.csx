@@ -1,4 +1,3 @@
-#load "GraphBase.csx"
 #load "Graph.csx"
 #load "../data-structure/UnionFind.csx"
 
