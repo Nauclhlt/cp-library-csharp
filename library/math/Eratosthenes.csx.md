@@ -91,6 +91,6 @@ title: Sieve of Eratosthenes
 - `PrimeFactorize(n)`: $n$ の素因数分解を求める
 - `GetDivisors(n)`: $n$ の約数を列挙する
 - `Mobius(n)`: $\mu (n)$ を求める. ここで $\mu$ はメビウス関数
-- `MobiusTransform(n, f)`: $g$ を $f$ のメビウス変換, すなわち $\displaystyle f(N)=\sum_{d|N} g(d)$ を満たす関数とするとき, $g(n)$ を求める
+- `MobiusTransform(n, f)`: $g$ を $f$ のメビウス変換, すなわち $\displaystyle f(N)=\sum_{d:Nの約数} g(d)$ を満たす関数とするとき, $g(n)$ を求める
 - `MinFactor(n)`: $n$ を割り切る最小の素数を返す
 - `IsPrime(n)`: $n$ が素数かどうかを返す

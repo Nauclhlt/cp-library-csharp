@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/math/SquareMatrix.csx
     title: Square Matrix
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://yukicoder.me/problems/no/1340
     links:
@@ -48,8 +48,8 @@ data:
   isVerificationFile: true
   path: verify/math/SquareMatrix.test.csx
   requiredBy: []
-  timestamp: '2026-05-14 21:28:54+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2026-05-31 09:59:20+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/math/SquareMatrix.test.csx
 layout: document

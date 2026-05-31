@@ -35,8 +35,8 @@ data:
     \ r, c);\n    }\n    else\n    {\n        int l = io.Int();\n        int r = io.Int();\n\
     \        io.Print(cirno.Sum(l, r).Value.ToString());\n    }\n}\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/data-structure/LazySegmentTree.csx
   - library/data-structure/CirnoArray.csx
+  - library/data-structure/LazySegmentTree.csx
   isVerificationFile: true
   path: verify/data-structure/CirnoArray.test.csx
   requiredBy: []

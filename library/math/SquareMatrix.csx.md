@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/math/SquareMatrix.test.csx
     title: verify/math/SquareMatrix.test.csx
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -32,41 +32,42 @@ data:
     \        }\n\n        _size = size;\n        _m = new T[size, size];\n    }\n\n\
     \    /// <summary>\n    /// Calculates the power to e. Time complexity is O(size^3loge).\n\
     \    /// </summary>\n    public SquareMatrix<T> Power(long e)\n    {\n       \
-    \ if (e == 1) return this;\n\n        SquareMatrix<T> half = Power(e / 2);\n \
-    \       SquareMatrix<T> res = half * half;\n        if (e % 2 == 1) res *= this;\n\
-    \n        return res;\n    }\n\n    /// <summary>\n    /// Returns the transposed\
-    \ matrix. Time complexity is O(size^2).\n    /// </summary>\n    public SquareMatrix<T>\
-    \ Transpose()\n    {\n        SquareMatrix<T> result = new(_size);\n\n       \
-    \ for (int i = 0; i < _size; i++)\n        {\n            for (int j = 0; j <\
-    \ _size; j++)\n            {\n                result[j, i] = this[i, j];\n   \
-    \         }\n        }\n\n        return result;\n    }\n\n    /// <summary>\n\
-    \    /// Returns a zero matrix. Time complexity is O(size^2).\n    /// </summary>\n\
-    \    public static SquareMatrix<T> Zero(int size)\n    {\n        SquareMatrix<T>\
-    \ result = new SquareMatrix<T>(size);\n\n        for (int i = 0; i < size; i++)\n\
-    \        {\n            for (int j = 0; j < size; j++)\n            {\n      \
-    \          result[i, j] = T.AdditiveIdentity;\n            }\n        }\n\n  \
-    \      return result;\n    }\n\n    /// <summary>\n    /// Returns an identity\
-    \ matrix. Time complexity is O(size^2).\n    /// </summary>\n    public static\
-    \ SquareMatrix<T> Identity(int size)\n    {\n        SquareMatrix<T> result =\
-    \ new SquareMatrix<T>(size);\n\n        for (int i = 0; i < size; i++)\n     \
-    \   {\n            for (int j = 0; j < size; j++)\n            {\n           \
-    \     if (i == j) result[i, j] = T.MultiplicativeIdentity;\n                else\
-    \ result[i, j] = T.AdditiveIdentity;\n            }\n        }\n\n        return\
-    \ result;\n    }\n\n\n\n    public static bool operator ==(SquareMatrix<T> a,\
-    \ SquareMatrix<T> b) => a.Equals(b);\n    public static bool operator !=(SquareMatrix<T>\
-    \ a, SquareMatrix<T> b) => !a.Equals(b);\n\n    public static SquareMatrix<T>\
-    \ operator +(SquareMatrix<T> left, SquareMatrix<T> right)\n    {\n        if (left.Size\
-    \ != right.Size)\n        {\n            throw new InvalidOperationException();\n\
-    \        }\n        SquareMatrix<T> dest = new(left.Size);\n        for (int r\
-    \ = 0; r < left.Size; r++)\n        {\n            for (int c = 0; c < left.Size;\
-    \ c++)\n            {\n                dest[r, c] = left[r, c] + right[r, c];\n\
-    \            }\n        }\n\n        return dest;\n    }\n\n    public static\
-    \ SquareMatrix<T> operator *(SquareMatrix<T> left, SquareMatrix<T> right)\n  \
-    \  {\n        if (left.Size != right.Size)\n        {\n            throw new InvalidOperationException();\n\
-    \        }\n\n        SquareMatrix<T> result = new(left.Size);\n\n        for\
-    \ (int r = 0; r < result.Size; r++)\n        {\n            for (int c = 0; c\
-    \ < result.Size; c++)\n            {\n                for (int i = 0; i < result.Size;\
-    \ i++)\n                {\n                    result[r, c] += right[i, c] * left[r,\
+    \ if (e == 0) return Identity(_size);\n        if (e == 1) return this;\n\n  \
+    \      SquareMatrix<T> half = Power(e / 2);\n        SquareMatrix<T> res = half\
+    \ * half;\n        if (e % 2 == 1) res *= this;\n\n        return res;\n    }\n\
+    \n    /// <summary>\n    /// Returns the transposed matrix. Time complexity is\
+    \ O(size^2).\n    /// </summary>\n    public SquareMatrix<T> Transpose()\n   \
+    \ {\n        SquareMatrix<T> result = new(_size);\n\n        for (int i = 0; i\
+    \ < _size; i++)\n        {\n            for (int j = 0; j < _size; j++)\n    \
+    \        {\n                result[j, i] = this[i, j];\n            }\n      \
+    \  }\n\n        return result;\n    }\n\n    /// <summary>\n    /// Returns a\
+    \ zero matrix. Time complexity is O(size^2).\n    /// </summary>\n    public static\
+    \ SquareMatrix<T> Zero(int size)\n    {\n        SquareMatrix<T> result = new\
+    \ SquareMatrix<T>(size);\n\n        for (int i = 0; i < size; i++)\n        {\n\
+    \            for (int j = 0; j < size; j++)\n            {\n                result[i,\
+    \ j] = T.AdditiveIdentity;\n            }\n        }\n\n        return result;\n\
+    \    }\n\n    /// <summary>\n    /// Returns an identity matrix. Time complexity\
+    \ is O(size^2).\n    /// </summary>\n    public static SquareMatrix<T> Identity(int\
+    \ size)\n    {\n        SquareMatrix<T> result = new SquareMatrix<T>(size);\n\n\
+    \        for (int i = 0; i < size; i++)\n        {\n            for (int j = 0;\
+    \ j < size; j++)\n            {\n                if (i == j) result[i, j] = T.MultiplicativeIdentity;\n\
+    \                else result[i, j] = T.AdditiveIdentity;\n            }\n    \
+    \    }\n\n        return result;\n    }\n\n\n\n    public static bool operator\
+    \ ==(SquareMatrix<T> a, SquareMatrix<T> b) => a.Equals(b);\n    public static\
+    \ bool operator !=(SquareMatrix<T> a, SquareMatrix<T> b) => !a.Equals(b);\n\n\
+    \    public static SquareMatrix<T> operator +(SquareMatrix<T> left, SquareMatrix<T>\
+    \ right)\n    {\n        if (left.Size != right.Size)\n        {\n           \
+    \ throw new InvalidOperationException();\n        }\n        \n        SquareMatrix<T>\
+    \ dest = Zero(left.Size);\n\n        for (int r = 0; r < left.Size; r++)\n   \
+    \     {\n            for (int c = 0; c < left.Size; c++)\n            {\n    \
+    \            dest[r, c] = left[r, c] + right[r, c];\n            }\n        }\n\
+    \n        return dest;\n    }\n\n    public static SquareMatrix<T> operator *(SquareMatrix<T>\
+    \ left, SquareMatrix<T> right)\n    {\n        if (left.Size != right.Size)\n\
+    \        {\n            throw new InvalidOperationException();\n        }\n\n\
+    \        SquareMatrix<T> result = Zero(left.Size);\n\n        for (int r = 0;\
+    \ r < result.Size; r++)\n        {\n            for (int c = 0; c < result.Size;\
+    \ c++)\n            {\n                for (int i = 0; i < result.Size; i++)\n\
+    \                {\n                    result[r, c] += right[i, c] * left[r,\
     \ i];\n                }\n            }\n        }\n\n        return result;\n\
     \    }\n\n    public bool Equals(SquareMatrix<T> other)\n    {\n        if (_size\
     \ != other.Size) return false;\n\n        for (int i = 0; i < _size; i++)\n  \
@@ -91,8 +92,8 @@ data:
   isVerificationFile: false
   path: library/math/SquareMatrix.csx
   requiredBy: []
-  timestamp: '2026-05-14 21:28:54+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2026-05-31 09:59:20+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/math/SquareMatrix.test.csx
 documentation_of: library/math/SquareMatrix.csx

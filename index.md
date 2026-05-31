@@ -74,7 +74,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/math/ModInt.csx
       title: ModInt
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/math/SquareMatrix.csx
       title: Square Matrix
   - name: library/utility
@@ -140,7 +140,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/math/ModInt.test.csx
       title: verify/math/ModInt.test.csx
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/math/SquareMatrix.test.csx
       title: verify/math/SquareMatrix.test.csx
   - name: verify/utility
