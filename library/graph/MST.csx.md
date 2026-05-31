@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: library/graph/Graph.csx
+    title: "Graph(\u7121\u5411\u30B0\u30E9\u30D5)"
+  - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
     title: Graph Base
   _extendedRequiredBy: []
@@ -19,11 +22,11 @@ data:
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
     \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/csharpscript.py\"\
     , line 113, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
-  code: "#load \"GraphBase.csx\"\n#load \"Graph.csx\"\n#load \"../data-structure/UnionFind.csx\"\
-    \n\npublic partial class Graph<T>\n{\n    /// <summary>\n    /// Gets the sum\
-    \ of weights of the edges in the maximum spanning tree of the graph.\n    ///\
-    \ Time complexity is O(ElogE).\n    /// </summary>\n    public T MaxSpanningTreeWeight()\n\
-    \    {\n        UnionFind unionFind = new(_vertexCount);\n\n        T ans = T.Zero;\n\
+  code: "#load \"Graph.csx\"\n#load \"../data-structure/UnionFind.csx\"\n\npublic\
+    \ partial class Graph<T>\n{\n    /// <summary>\n    /// Gets the sum of weights\
+    \ of the edges in the maximum spanning tree of the graph.\n    /// Time complexity\
+    \ is O(ElogE).\n    /// </summary>\n    public T MaxSpanningTreeWeight()\n   \
+    \ {\n        UnionFind unionFind = new(_vertexCount);\n\n        T ans = T.Zero;\n\
     \        foreach (var edge in _edges.OrderByDescending(x => x.Weight))\n     \
     \   {\n            if (!unionFind.Same(edge.From, edge.To))\n            {\n \
     \               unionFind.Unite(edge.From, edge.To);\n                ans += edge.Weight;\n\
@@ -37,10 +40,11 @@ data:
     \ += edge.Weight;\n            }\n        }\n\n        return ans;\n    }\n}"
   dependsOn:
   - library/graph/GraphBase.csx
+  - library/graph/Graph.csx
   isVerificationFile: false
   path: library/graph/MST.csx
   requiredBy: []
-  timestamp: '2026-05-10 21:00:58+09:00'
+  timestamp: '2026-05-31 11:56:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/MST.test.csx

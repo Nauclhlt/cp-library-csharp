@@ -4,11 +4,29 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
     title: Graph Base
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/graph/EulerTour.csx
+    title: "Euler Tour(\u30AA\u30A4\u30E9\u30FC\u30C4\u30A2\u30FC)"
+  - icon: ':heavy_check_mark:'
+    path: library/graph/MST.csx
+    title: "Minimum/Maximum Spanning Tree(\u30AF\u30E9\u30B9\u30AB\u30EB\u6CD5)"
+  - icon: ':heavy_check_mark:'
+    path: library/graph/TreeDiameter.csx
+    title: library/graph/TreeDiameter.csx
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/EulerTour.test.csx
+    title: verify/graph/EulerTour.test.csx
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/MST.test.csx
+    title: verify/graph/MST.test.csx
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/TreeDiameter.test.csx
+    title: verify/graph/TreeDiameter.test.csx
   _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -50,10 +68,16 @@ data:
   - library/graph/GraphBase.csx
   isVerificationFile: false
   path: library/graph/Graph.csx
-  requiredBy: []
+  requiredBy:
+  - library/graph/TreeDiameter.csx
+  - library/graph/EulerTour.csx
+  - library/graph/MST.csx
   timestamp: '2026-05-10 21:00:58+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/graph/MST.test.csx
+  - verify/graph/EulerTour.test.csx
+  - verify/graph/TreeDiameter.test.csx
 documentation_of: library/graph/Graph.csx
 layout: document
 title: "Graph(\u7121\u5411\u30B0\u30E9\u30D5)"

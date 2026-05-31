@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: library/graph/Graph.csx
+    title: "Graph(\u7121\u5411\u30B0\u30E9\u30D5)"
+  - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
     title: Graph Base
   - icon: ':heavy_check_mark:'
@@ -32,11 +35,12 @@ data:
     \nio.Print(g.GetDiameter());\n\nConsole.Out.Flush();"
   dependsOn:
   - library/graph/TreeDiameter.csx
+  - library/graph/Graph.csx
   - library/graph/GraphBase.csx
   isVerificationFile: true
   path: verify/graph/TreeDiameter.test.csx
   requiredBy: []
-  timestamp: '2026-05-10 21:30:20+09:00'
+  timestamp: '2026-05-31 11:56:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/TreeDiameter.test.csx

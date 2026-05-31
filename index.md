@@ -41,7 +41,10 @@ data:
     - icon: ':warning:'
       path: library/graph/DirectedGraph.csx
       title: "Directed Graph(\u6709\u5411\u30B0\u30E9\u30D5)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
+      path: library/graph/EulerTour.csx
+      title: "Euler Tour(\u30AA\u30A4\u30E9\u30FC\u30C4\u30A2\u30FC)"
+    - icon: ':heavy_check_mark:'
       path: library/graph/Graph.csx
       title: "Graph(\u7121\u5411\u30B0\u30E9\u30D5)"
     - icon: ':heavy_check_mark:'
@@ -117,6 +120,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/Dijkstra.test.csx
       title: verify/graph/Dijkstra.test.csx
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/EulerTour.test.csx
+      title: verify/graph/EulerTour.test.csx
     - icon: ':heavy_check_mark:'
       path: verify/graph/MST.test.csx
       title: verify/graph/MST.test.csx
