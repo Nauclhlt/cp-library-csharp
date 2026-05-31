@@ -50,6 +50,7 @@ public sealed class SquareMatrix<T> : IEquatable<SquareMatrix<T>>
     /// </summary>
     public SquareMatrix<T> Power(long e)
     {
+        if (e == 0) return Identity(_size);
         if (e == 1) return this;
 
         SquareMatrix<T> half = Power(e / 2);
@@ -125,7 +126,9 @@ public sealed class SquareMatrix<T> : IEquatable<SquareMatrix<T>>
         {
             throw new InvalidOperationException();
         }
-        SquareMatrix<T> dest = new(left.Size);
+        
+        SquareMatrix<T> dest = Zero(left.Size);
+
         for (int r = 0; r < left.Size; r++)
         {
             for (int c = 0; c < left.Size; c++)
