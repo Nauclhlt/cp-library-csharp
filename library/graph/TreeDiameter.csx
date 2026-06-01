@@ -1,5 +1,5 @@
-#load "Graph.csx"
 #load "BFS.csx"
+#load "Graph.csx"
 
 public partial class Graph<T>
 {

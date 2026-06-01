@@ -1,4 +1,3 @@
-#load "GraphBase.csx"
 #load "DirectedGraph.csx"
 
 public partial class DirectedGraph<T>

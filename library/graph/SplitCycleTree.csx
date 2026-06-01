@@ -1,6 +1,5 @@
-#load "GraphBase.csx"
 #load "DirectedGraph.csx"
-#load "DivideSCC.csx"
+#load "SCC.csx"
 
 public partial class DirectedGraph<T>
 {
