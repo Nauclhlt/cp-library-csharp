@@ -37,8 +37,8 @@ data:
     \ v = io.Int();\n\n    io.Print(et.Lca(u, v));\n}\n\nConsole.Out.Flush();"
   dependsOn:
   - library/graph/GraphBase.csx
-  - library/graph/EulerTour.csx
   - library/graph/Graph.csx
+  - library/graph/EulerTour.csx
   isVerificationFile: true
   path: verify/graph/EulerTour.test.csx
   requiredBy: []

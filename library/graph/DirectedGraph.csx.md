@@ -4,11 +4,28 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
     title: Graph Base
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/graph/SCC.csx
+    title: "Strongly Connected Components(\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
+      )"
+  - icon: ':warning:'
+    path: library/graph/SplitCycleTree.csx
+    title: "Split-Cycle-Tree (\u9589\u8DEF+\u6728\u5206\u89E3)"
+  - icon: ':heavy_check_mark:'
+    path: library/graph/TopologicalSort.csx
+    title: "Topological Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
+      )"
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/SCC.test.csx
+    title: verify/graph/SCC.test.csx
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/TopologicalSort.test.csx
+    title: verify/graph/TopologicalSort.test.csx
   _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -34,10 +51,15 @@ data:
   - library/graph/GraphBase.csx
   isVerificationFile: false
   path: library/graph/DirectedGraph.csx
-  requiredBy: []
+  requiredBy:
+  - library/graph/TopologicalSort.csx
+  - library/graph/SCC.csx
+  - library/graph/SplitCycleTree.csx
   timestamp: '2026-05-10 21:00:58+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/graph/SCC.test.csx
+  - verify/graph/TopologicalSort.test.csx
 documentation_of: library/graph/DirectedGraph.csx
 layout: document
 title: "Directed Graph(\u6709\u5411\u30B0\u30E9\u30D5)"

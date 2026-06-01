@@ -11,9 +11,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/MST.csx
     title: "Minimum/Maximum Spanning Tree(\u30AF\u30E9\u30B9\u30AB\u30EB\u6CD5)"
-  - icon: ':heavy_check_mark:'
-    path: library/graph/TreeDiameter.csx
-    title: "Tree Diameter(\u6728\u306E\u76F4\u5F84)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/graph/EulerTour.test.csx
@@ -21,9 +18,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/MST.test.csx
     title: verify/graph/MST.test.csx
-  - icon: ':heavy_check_mark:'
-    path: verify/graph/TreeDiameter.test.csx
-    title: verify/graph/TreeDiameter.test.csx
   _isVerificationFailed: false
   _pathExtension: csx
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -69,7 +63,6 @@ data:
   isVerificationFile: false
   path: library/graph/Graph.csx
   requiredBy:
-  - library/graph/TreeDiameter.csx
   - library/graph/EulerTour.csx
   - library/graph/MST.csx
   timestamp: '2026-05-10 21:00:58+09:00'
@@ -77,7 +70,6 @@ data:
   verifiedWith:
   - verify/graph/MST.test.csx
   - verify/graph/EulerTour.test.csx
-  - verify/graph/TreeDiameter.test.csx
 documentation_of: library/graph/Graph.csx
 layout: document
 title: "Graph(\u7121\u5411\u30B0\u30E9\u30D5)"

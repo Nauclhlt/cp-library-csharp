@@ -4,11 +4,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
     title: Graph Base
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/graph/TreeDiameter.csx
+    title: "Tree Diameter(\u6728\u306E\u76F4\u5F84)"
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/TreeDiameter.test.csx
+    title: verify/graph/TreeDiameter.test.csx
   _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -32,10 +38,12 @@ data:
   - library/graph/GraphBase.csx
   isVerificationFile: false
   path: library/graph/BFS.csx
-  requiredBy: []
+  requiredBy:
+  - library/graph/TreeDiameter.csx
   timestamp: '2026-05-10 21:00:58+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/graph/TreeDiameter.test.csx
 documentation_of: library/graph/BFS.csx
 layout: document
 title: "BFS(\u5E45\u512A\u5148\u63A2\u7D22)"

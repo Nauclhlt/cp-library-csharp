@@ -50,8 +50,26 @@ data:
   - verify/graph/WarshallFloyd.test.csx
 documentation_of: library/graph/WarshallFloyd.csx
 layout: document
-redirect_from:
-- /library/library/graph/WarshallFloyd.csx
-- /library/library/graph/WarshallFloyd.csx.html
-title: library/graph/WarshallFloyd.csx
+title: "Warshall-Floyd\u6CD5"
 ---
+
+#### 説明
+
+ワーシャルフロイド(Warshall-Floyd, Floyd-Warshall)法で全頂点対間の最短経路問題を解く.
+
+計算量はグラフの頂点数, 辺数を $V, E$ として $O(E+V^3)$.
+
+はじめ, 頂点 $u, v$ の最短距離を記録する配列 $D[u][v]$ において, $u\rightarrow v$ に重み $w$ の辺があるなら, $D[u][v]=w$, ないなら $D[u][v]=\infty$ としておく.
+
+次に, 以下を行う.
+
+- すべての頂点 $k$ に対して順に以下を行う
+    - 任意の $2$ 頂点の対 $(i, j)$ に対して, $D[i][k]+D[k][j]<D[i][j]$ が成り立つなら $D[i][j]$ を左辺の値で更新するという操作を行う
+
+直感的には, 現在の(暫定的な)最短経路よりも, 他の頂点(頂点 $k$)を経由した方が短い距離で到達できるなら更新するという操作を繰り返すということ.
+
+#### 注意点
+- 有向/無向や負辺の有無にかかわらず動作します
+
+#### 関数
+- `WarshallFloyd()`: 全頂点対間の最短経路を含む $2$ 次元配列を返す

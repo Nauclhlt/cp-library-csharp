@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: library/graph/Graph.csx
-    title: "Graph(\u7121\u5411\u30B0\u30E9\u30D5)"
+    path: library/graph/BFS.csx
+    title: "BFS(\u5E45\u512A\u5148\u63A2\u7D22)"
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
     title: Graph Base
@@ -34,13 +34,13 @@ data:
     \    int t = io.Int();\n    long w = io.Long();\n\n    g.AddEdge(s, t, w);\n}\n\
     \nio.Print(g.GetDiameter());\n\nConsole.Out.Flush();"
   dependsOn:
+  - library/graph/BFS.csx
   - library/graph/TreeDiameter.csx
   - library/graph/GraphBase.csx
-  - library/graph/Graph.csx
   isVerificationFile: true
   path: verify/graph/TreeDiameter.test.csx
   requiredBy: []
-  timestamp: '2026-05-31 18:02:28+09:00'
+  timestamp: '2026-06-01 17:36:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/TreeDiameter.test.csx

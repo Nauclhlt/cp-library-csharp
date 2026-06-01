@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: library/graph/Graph.csx
-    title: "Graph(\u7121\u5411\u30B0\u30E9\u30D5)"
+    path: library/graph/BFS.csx
+    title: "BFS(\u5E45\u512A\u5148\u63A2\u7D22)"
   - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
     title: Graph Base
@@ -22,7 +22,7 @@ data:
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
     \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/csharpscript.py\"\
     , line 113, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
-  code: "#load \"Graph.csx\"\n#load \"BFS.csx\"\n\npublic partial class Graph<T>\n\
+  code: "#load \"BFS.csx\"\n#load \"Graph.csx\"\n\npublic partial class Graph<T>\n\
     {\n    /// <summary>\n    /// Calculates the diameter of the tree, the maximum\
     \ length of simple paths contained in the tree. Time complexity is O(V).\n   \
     \ /// </summary>\n    public T GetDiameter()\n    {\n        if (_vertexCount\
@@ -44,11 +44,11 @@ data:
     \      break;\n            }\n        }\n\n        return (u, v);\n    }\n}"
   dependsOn:
   - library/graph/GraphBase.csx
-  - library/graph/Graph.csx
+  - library/graph/BFS.csx
   isVerificationFile: false
   path: library/graph/TreeDiameter.csx
   requiredBy: []
-  timestamp: '2026-05-31 18:02:28+09:00'
+  timestamp: '2026-06-01 17:36:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/TreeDiameter.test.csx

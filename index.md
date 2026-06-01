@@ -30,7 +30,7 @@ data:
       title: Union-Find
   - name: library/graph
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/BFS.csx
       title: "BFS(\u5E45\u512A\u5148\u63A2\u7D22)"
     - icon: ':heavy_check_mark:'
@@ -39,7 +39,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graph/Dijkstra.csx
       title: "Dijkstra\u6CD5"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/DirectedGraph.csx
       title: "Directed Graph(\u6709\u5411\u30B0\u30E9\u30D5)"
     - icon: ':heavy_check_mark:'
@@ -60,7 +60,7 @@ data:
         )"
     - icon: ':warning:'
       path: library/graph/SplitCycleTree.csx
-      title: library/graph/SplitCycleTree.csx
+      title: "Split-Cycle-Tree (\u9589\u8DEF+\u6728\u5206\u89E3)"
     - icon: ':heavy_check_mark:'
       path: library/graph/TopologicalSort.csx
       title: "Topological Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
@@ -70,7 +70,7 @@ data:
       title: "Tree Diameter(\u6728\u306E\u76F4\u5F84)"
     - icon: ':heavy_check_mark:'
       path: library/graph/WarshallFloyd.csx
-      title: library/graph/WarshallFloyd.csx
+      title: "Warshall-Floyd\u6CD5"
   - name: library/math
     pages:
     - icon: ':heavy_check_mark:'

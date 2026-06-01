@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: library/graph/DirectedGraph.csx
+    title: "Directed Graph(\u6709\u5411\u30B0\u30E9\u30D5)"
+  - icon: ':heavy_check_mark:'
     path: library/graph/GraphBase.csx
     title: Graph Base
   - icon: ':heavy_check_mark:'
@@ -34,12 +37,13 @@ data:
     \ i < scc.Count; i++)\n{\n    Console.Write(scc[i].Count + \" \");\n    io.Print(scc[i]);\n\
     }\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/SCC.csx
   - library/graph/GraphBase.csx
+  - library/graph/SCC.csx
+  - library/graph/DirectedGraph.csx
   isVerificationFile: true
   path: verify/graph/SCC.test.csx
   requiredBy: []
-  timestamp: '2026-05-10 21:00:58+09:00'
+  timestamp: '2026-06-01 17:36:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/SCC.test.csx

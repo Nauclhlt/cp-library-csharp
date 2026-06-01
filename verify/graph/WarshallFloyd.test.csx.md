@@ -6,7 +6,7 @@ data:
     title: Graph Base
   - icon: ':heavy_check_mark:'
     path: library/graph/WarshallFloyd.csx
-    title: library/graph/WarshallFloyd.csx
+    title: "Warshall-Floyd\u6CD5"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -39,8 +39,8 @@ data:
     \     {\n            Console.Write(dist[i, j]);\n        }\n    }\n    Console.WriteLine();\n\
     }\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/WarshallFloyd.csx
   - library/graph/GraphBase.csx
+  - library/graph/WarshallFloyd.csx
   isVerificationFile: true
   path: verify/graph/WarshallFloyd.test.csx
   requiredBy: []
