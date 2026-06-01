@@ -43,8 +43,8 @@ data:
     \               stack.Push(ch[j].To);\n                }\n            }\n\n  \
     \          res.Add(list);\n        }\n\n        return res;\n    }\n}"
   dependsOn:
-  - library/graph/GraphBase.csx
   - library/graph/DirectedGraph.csx
+  - library/graph/GraphBase.csx
   isVerificationFile: false
   path: library/graph/SCC.csx
   requiredBy: []

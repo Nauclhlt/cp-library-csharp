@@ -34,8 +34,8 @@ data:
     \nfor (int i = 0; i < V; i++)\n{\n    if (dist[i] == long.MaxValue)\n        io.Print(\"\
     INF\");\n    else\n        io.Print(dist[i]);\n}\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/GraphBase.csx
   - library/graph/Dijkstra.csx
+  - library/graph/GraphBase.csx
   isVerificationFile: true
   path: verify/graph/Dijkstra.test.csx
   requiredBy: []

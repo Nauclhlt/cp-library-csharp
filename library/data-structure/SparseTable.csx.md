@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/data-structure/SparseTable2D.csx
+    title: library/data-structure/SparseTable2D.csx
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/data-structure/SparseTable.test.csx
     title: verify/data-structure/SparseTable.test.csx
+  - icon: ':heavy_check_mark:'
+    path: verify/data-structure/SparseTable2D.test.csx
+    title: verify/data-structure/SparseTable2D.test.csx
   _isVerificationFailed: false
   _pathExtension: csx
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -41,10 +47,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/data-structure/SparseTable.csx
-  requiredBy: []
+  requiredBy:
+  - library/data-structure/SparseTable2D.csx
   timestamp: '2026-03-30 11:41:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/data-structure/SparseTable2D.test.csx
   - verify/data-structure/SparseTable.test.csx
 documentation_of: library/data-structure/SparseTable.csx
 layout: document

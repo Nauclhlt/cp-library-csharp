@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/math/ModCache.csx
+    title: library/math/ModCache.csx
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/math/ModInt.test.csx
@@ -174,7 +177,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/math/ModInt.csx
-  requiredBy: []
+  requiredBy:
+  - library/math/ModCache.csx
   timestamp: '2026-05-10 16:26:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

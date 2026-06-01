@@ -26,6 +26,9 @@ data:
       path: library/data-structure/SparseTable.csx
       title: Sparse Table
     - icon: ':heavy_check_mark:'
+      path: library/data-structure/SparseTable2D.csx
+      title: library/data-structure/SparseTable2D.csx
+    - icon: ':heavy_check_mark:'
       path: library/data-structure/UnionFind.csx
       title: Union-Find
   - name: library/graph
@@ -77,6 +80,9 @@ data:
       path: library/math/Eratosthenes.csx
       title: "Sieve of Eratosthenes(\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\
         \u7BE9)"
+    - icon: ':warning:'
+      path: library/math/ModCache.csx
+      title: library/math/ModCache.csx
     - icon: ':heavy_check_mark:'
       path: library/math/ModInt.csx
       title: ModInt
@@ -112,6 +118,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/SparseTable.test.csx
       title: verify/data-structure/SparseTable.test.csx
+    - icon: ':heavy_check_mark:'
+      path: verify/data-structure/SparseTable2D.test.csx
+      title: verify/data-structure/SparseTable2D.test.csx
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/UnionFind.test.csx
       title: verify/data-structure/UnionFind.test.csx

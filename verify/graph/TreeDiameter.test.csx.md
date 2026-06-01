@@ -34,8 +34,8 @@ data:
     \    int t = io.Int();\n    long w = io.Long();\n\n    g.AddEdge(s, t, w);\n}\n\
     \nio.Print(g.GetDiameter());\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/BFS.csx
   - library/graph/TreeDiameter.csx
+  - library/graph/BFS.csx
   - library/graph/GraphBase.csx
   isVerificationFile: true
   path: verify/graph/TreeDiameter.test.csx

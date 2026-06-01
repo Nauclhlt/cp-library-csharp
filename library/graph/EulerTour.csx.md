@@ -137,8 +137,8 @@ data:
     \ + RootPathEdgeWeightSum(v) - RootPathEdgeWeightSum(lca) - RootPathEdgeWeightSum(lca);\n\
     \        }\n    }\n}"
   dependsOn:
-  - library/graph/GraphBase.csx
   - library/graph/Graph.csx
+  - library/graph/GraphBase.csx
   isVerificationFile: false
   path: library/graph/EulerTour.csx
   requiredBy: []
