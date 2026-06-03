@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ModCache.csx
-    title: library/math/ModCache.csx
+    title: "Mod Cache (\u4F59\u308A\u95A2\u9023\u306E\u524D\u8A08\u7B97)"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/math/ModCache.test.csx
+    title: verify/math/ModCache.test.csx
   - icon: ':heavy_check_mark:'
     path: verify/math/ModInt.test.csx
     title: verify/math/ModInt.test.csx
@@ -182,6 +185,7 @@ data:
   timestamp: '2026-05-10 16:26:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/math/ModCache.test.csx
   - verify/math/ModInt.test.csx
 documentation_of: library/math/ModInt.csx
 layout: document

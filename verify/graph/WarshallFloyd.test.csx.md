@@ -39,8 +39,8 @@ data:
     \     {\n            Console.Write(dist[i, j]);\n        }\n    }\n    Console.WriteLine();\n\
     }\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/GraphBase.csx
   - library/graph/WarshallFloyd.csx
+  - library/graph/GraphBase.csx
   isVerificationFile: true
   path: verify/graph/WarshallFloyd.test.csx
   requiredBy: []

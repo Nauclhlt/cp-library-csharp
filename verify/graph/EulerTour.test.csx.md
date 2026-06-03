@@ -36,8 +36,8 @@ data:
     \ io.Int();\n\nfor (int i = 0; i < Q; i++)\n{\n    int u = io.Int();\n    int\
     \ v = io.Int();\n\n    io.Print(et.Lca(u, v));\n}\n\nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/Graph.csx
   - library/graph/EulerTour.csx
+  - library/graph/Graph.csx
   - library/graph/GraphBase.csx
   isVerificationFile: true
   path: verify/graph/EulerTour.test.csx

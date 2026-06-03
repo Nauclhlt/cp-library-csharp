@@ -35,8 +35,8 @@ data:
     \nio.Print(g.GetDiameter());\n\nConsole.Out.Flush();"
   dependsOn:
   - library/graph/TreeDiameter.csx
-  - library/graph/BFS.csx
   - library/graph/GraphBase.csx
+  - library/graph/BFS.csx
   isVerificationFile: true
   path: verify/graph/TreeDiameter.test.csx
   requiredBy: []

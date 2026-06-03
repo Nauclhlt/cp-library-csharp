@@ -39,8 +39,8 @@ data:
     \ {\n                unionFind.Unite(edge.From, edge.To);\n                ans\
     \ += edge.Weight;\n            }\n        }\n\n        return ans;\n    }\n}"
   dependsOn:
-  - library/graph/Graph.csx
   - library/graph/GraphBase.csx
+  - library/graph/Graph.csx
   isVerificationFile: false
   path: library/graph/MST.csx
   requiredBy: []

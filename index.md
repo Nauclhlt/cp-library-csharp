@@ -16,6 +16,10 @@ data:
       path: library/data-structure/LazySegmentTree.csx
       title: "Lazy Segment Tree(\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\
         \u6728)"
+    - icon: ':warning:'
+      path: library/data-structure/PersistentSegmentTree.csx
+      title: "Persistent Segment Tree(\u5B8C\u5168\u6C38\u7D9A\u30BB\u30B0\u30E1\u30F3\
+        \u30C8\u6728)"
     - icon: ':heavy_check_mark:'
       path: library/data-structure/SegmentTree.csx
       title: "Segment Tree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
@@ -80,15 +84,20 @@ data:
       path: library/math/Eratosthenes.csx
       title: "Sieve of Eratosthenes(\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\
         \u7BE9)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/math/ModCache.csx
-      title: library/math/ModCache.csx
+      title: "Mod Cache (\u4F59\u308A\u95A2\u9023\u306E\u524D\u8A08\u7B97)"
     - icon: ':heavy_check_mark:'
       path: library/math/ModInt.csx
       title: ModInt
     - icon: ':heavy_check_mark:'
       path: library/math/SquareMatrix.csx
       title: "Square Matrix(\u6B63\u65B9\u884C\u5217)"
+  - name: library/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: library/string/SuffixArray.csx
+      title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
   - name: library/utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -156,11 +165,19 @@ data:
       path: verify/math/Eratosthenes.test.csx
       title: verify/math/Eratosthenes.test.csx
     - icon: ':heavy_check_mark:'
+      path: verify/math/ModCache.test.csx
+      title: verify/math/ModCache.test.csx
+    - icon: ':heavy_check_mark:'
       path: verify/math/ModInt.test.csx
       title: verify/math/ModInt.test.csx
     - icon: ':heavy_check_mark:'
       path: verify/math/SquareMatrix.test.csx
       title: verify/math/SquareMatrix.test.csx
+  - name: verify/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/string/SuffixArray.test.csx
+      title: verify/string/SuffixArray.test.csx
   - name: verify/utility
     pages:
     - icon: ':heavy_check_mark:'

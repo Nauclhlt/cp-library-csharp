@@ -36,9 +36,9 @@ data:
     \ 0);\n}\n\nio.Print(g.TryTopologicalSort(out List<int> _) ? \"0\" : \"1\");\n\
     \nConsole.Out.Flush();"
   dependsOn:
-  - library/graph/DirectedGraph.csx
-  - library/graph/TopologicalSort.csx
   - library/graph/GraphBase.csx
+  - library/graph/TopologicalSort.csx
+  - library/graph/DirectedGraph.csx
   isVerificationFile: true
   path: verify/graph/TopologicalSort.test.csx
   requiredBy: []

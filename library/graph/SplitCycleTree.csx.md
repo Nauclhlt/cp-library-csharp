@@ -38,8 +38,8 @@ data:
     \                }\n            }\n        }\n\n        return (cycles, tree);\n\
     \    }\n}"
   dependsOn:
-  - library/graph/GraphBase.csx
   - library/graph/DirectedGraph.csx
+  - library/graph/GraphBase.csx
   isVerificationFile: false
   path: library/graph/SplitCycleTree.csx
   requiredBy: []
