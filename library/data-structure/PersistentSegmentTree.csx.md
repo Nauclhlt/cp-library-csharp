@@ -2,11 +2,15 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/data-structure/PersistentSegmentTree.test.csx
+    title: verify/data-structure/PersistentSegmentTree.test.csx
   _isVerificationFailed: false
   _pathExtension: csx
-  _verificationStatusIcon: ':warning:'
-  attributes: {}
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -19,31 +23,30 @@ data:
     \        public Node LeftNode { get; set; }\n        public Node RightNode { get;\
     \ set; }\n\n        public Node(T data)\n        {\n            Data = data;\n\
     \            LeftNode = null;\n            RightNode = null;\n        }\n    }\n\
-    \n    private int _treeSize;\n    private int _size;\n    private Monoid<T> _operator;\n\
-    \    private Monoid<T> _update;\n    private T _identity;\n    private List<Node>\
+    \n    private int _treeSize;\n    private int _size;\n    private Monoid _operator;\n\
+    \    private Monoid _update;\n    private T _identity;\n    private List<Node>\
     \ _snapshots;\n\n    public int Size => _size;\n    public int TreeSize => _treeSize;\n\
     \    public T Identity => _identity;\n\n    public PersistentSegmentTree(int n,\
-    \ Monoid<T> op, Monoid<T> update, T identity)\n    {\n        _size = n;\n   \
-    \     _treeSize = 2 * _size - 1;\n\n        _identity = identity;\n        _operator\
-    \ = op;\n        _update = update;\n\n        _snapshots = new();\n    }\n\n \
-    \   /// <summary>\n    /// Returns the value at the specified index, at the specified\
-    \ time. Time complexity is O(logn).\n    /// </summary>\n    public T this[int\
-    \ time, int index]\n    {\n        get\n        {\n            return Access(time,\
-    \ index);\n        }\n    }\n\n    /// <summary>\n    /// Builds the segment tree\
-    \ from the array. Time complexity is O(n).\n    /// </summary>\n    public int\
-    \ Build(T[] array)\n    {\n        if (_size != array.Length)\n        {\n   \
-    \         throw new InvalidOperationException(\"Size of the specified array does\
-    \ not match with the data size passed in the constructor.\");\n        }\n\n \
-    \       return RegisterNode(BuildRange(0, array.Length, array));\n    }\n\n  \
-    \  /// <summary>\n    /// Fills the segment tree with the uniform value. Time\
-    \ complexity is O(n).\n    /// </summary>\n    public int Fill(T value)\n    {\n\
-    \        return RegisterNode(BuildFillRange(0, _size, value));\n    }\n\n    private\
-    \ Node BuildFillRange(int l, int r, T value)\n    {\n        if (l + 1 >= r) return\
-    \ new Node(value);\n        else return MergeNode(BuildFillRange(l, (l + r) /\
-    \ 2, value), BuildFillRange((l + r) / 2, r, value));\n    }\n\n    private Node\
-    \ BuildRange(int l, int r, T[] array)\n    {\n        if (l + 1 >= r) return new\
-    \ Node(array[l]);\n        else return MergeNode(BuildRange(l, (l + r) / 2, array),\
-    \ BuildRange((l + r) / 2, r, array));\n    }\n\n    private Node MergeNode(Node\
+    \ Monoid op, Monoid update, T identity)\n    {\n        _size = n;\n        _treeSize\
+    \ = 2 * _size - 1;\n\n        _identity = identity;\n        _operator = op;\n\
+    \        _update = update;\n\n        _snapshots = new();\n    }\n\n    /// <summary>\n\
+    \    /// Returns the value at the specified index, at the specified time. Time\
+    \ complexity is O(logn).\n    /// </summary>\n    public T this[int time, int\
+    \ index]\n    {\n        get\n        {\n            return Access(time, index);\n\
+    \        }\n    }\n\n    /// <summary>\n    /// Builds the segment tree from the\
+    \ array. Time complexity is O(n).\n    /// </summary>\n    public int Build(T[]\
+    \ array)\n    {\n        if (_size != array.Length)\n        {\n            throw\
+    \ new InvalidOperationException(\"Size of the specified array does not match with\
+    \ the data size passed in the constructor.\");\n        }\n\n        return RegisterNode(BuildRange(0,\
+    \ array.Length, array));\n    }\n\n    /// <summary>\n    /// Fills the segment\
+    \ tree with the uniform value. Time complexity is O(n).\n    /// </summary>\n\
+    \    public int Fill(T value)\n    {\n        return RegisterNode(BuildFillRange(0,\
+    \ _size, value));\n    }\n\n    private Node BuildFillRange(int l, int r, T value)\n\
+    \    {\n        if (l + 1 >= r) return new Node(value);\n        else return MergeNode(BuildFillRange(l,\
+    \ (l + r) / 2, value), BuildFillRange((l + r) / 2, r, value));\n    }\n\n    private\
+    \ Node BuildRange(int l, int r, T[] array)\n    {\n        if (l + 1 >= r) return\
+    \ new Node(array[l]);\n        else return MergeNode(BuildRange(l, (l + r) / 2,\
+    \ array), BuildRange((l + r) / 2, r, array));\n    }\n\n    private Node MergeNode(Node\
     \ l, Node r)\n    {\n        Node res = new (_operator(l.Data, r.Data))\n    \
     \    {\n            LeftNode = l,\n            RightNode = r\n        };\n   \
     \     return res;\n    }\n\n    /// <summary>\n    /// Clear all snapshots. Time\
@@ -83,9 +86,10 @@ data:
   isVerificationFile: false
   path: library/data-structure/PersistentSegmentTree.csx
   requiredBy: []
-  timestamp: '2026-06-03 15:40:08+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2026-06-07 13:52:56+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/data-structure/PersistentSegmentTree.test.csx
 documentation_of: library/data-structure/PersistentSegmentTree.csx
 layout: document
 title: "Persistent Segment Tree(\u5B8C\u5168\u6C38\u7D9A\u30BB\u30B0\u30E1\u30F3\u30C8\

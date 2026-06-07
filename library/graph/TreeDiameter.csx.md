@@ -43,8 +43,8 @@ data:
     \ if (diameter == dist[i])\n            {\n                u = i;\n          \
     \      break;\n            }\n        }\n\n        return (u, v);\n    }\n}"
   dependsOn:
-  - library/graph/BFS.csx
   - library/graph/GraphBase.csx
+  - library/graph/BFS.csx
   isVerificationFile: false
   path: library/graph/TreeDiameter.csx
   requiredBy: []

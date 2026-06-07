@@ -16,7 +16,7 @@ data:
       path: library/data-structure/LazySegmentTree.csx
       title: "Lazy Segment Tree(\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\
         \u6728)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/data-structure/PersistentSegmentTree.csx
       title: "Persistent Segment Tree(\u5B8C\u5168\u6C38\u7D9A\u30BB\u30B0\u30E1\u30F3\
         \u30C8\u6728)"
@@ -35,6 +35,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/data-structure/UnionFind.csx
       title: Union-Find
+    - icon: ':heavy_check_mark:'
+      path: library/data-structure/WaveletMatrix.csx
+      title: Wavelet Matrix
   - name: library/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -90,17 +93,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/math/ModInt.csx
       title: ModInt
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/math/SquareMatrix.csx
       title: "Square Matrix(\u6B63\u65B9\u884C\u5217)"
   - name: library/string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/string/SuffixArray.csx
       title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
   - name: library/utility
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/utility/CPIO.csx
       title: CPIO
   verificationCategories:
@@ -119,6 +122,9 @@ data:
       path: verify/data-structure/LazySegmentTree.test.csx
       title: verify/data-structure/LazySegmentTree.test.csx
     - icon: ':heavy_check_mark:'
+      path: verify/data-structure/PersistentSegmentTree.test.csx
+      title: verify/data-structure/PersistentSegmentTree.test.csx
+    - icon: ':heavy_check_mark:'
       path: verify/data-structure/SegmentTree.test.csx
       title: verify/data-structure/SegmentTree.test.csx
     - icon: ':heavy_check_mark:'
@@ -133,6 +139,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data-structure/UnionFind.test.csx
       title: verify/data-structure/UnionFind.test.csx
+    - icon: ':heavy_check_mark:'
+      path: verify/data-structure/WaveletMatrix.test.csx
+      title: verify/data-structure/WaveletMatrix.test.csx
   - name: verify/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -170,17 +179,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/math/ModInt.test.csx
       title: verify/math/ModInt.test.csx
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/math/SquareMatrix.test.csx
       title: verify/math/SquareMatrix.test.csx
   - name: verify/string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/string/SuffixArray.test.csx
       title: verify/string/SuffixArray.test.csx
   - name: verify/utility
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/utility/CPIO.test.csx
       title: verify/utility/CPIO.test.csx
 layout: toppage

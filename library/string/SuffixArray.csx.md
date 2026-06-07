@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/string/SuffixArray.test.csx
     title: verify/string/SuffixArray.test.csx
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: csx
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -117,7 +117,7 @@ data:
   path: library/string/SuffixArray.csx
   requiredBy: []
   timestamp: '2026-06-03 15:40:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/string/SuffixArray.test.csx
 documentation_of: library/string/SuffixArray.csx

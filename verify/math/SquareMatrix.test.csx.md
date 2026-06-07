@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/math/SquareMatrix.csx
     title: "Square Matrix(\u6B63\u65B9\u884C\u5217)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: csx
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://yukicoder.me/problems/no/1340
     links:
@@ -49,7 +49,7 @@ data:
   path: verify/math/SquareMatrix.test.csx
   requiredBy: []
   timestamp: '2026-05-31 09:59:20+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/math/SquareMatrix.test.csx
 layout: document

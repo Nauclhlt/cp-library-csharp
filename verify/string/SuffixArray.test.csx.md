@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/string/SuffixArray.csx
     title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: csx
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://yukicoder.me/problems/no/430
     links:
@@ -33,7 +33,7 @@ data:
   path: verify/string/SuffixArray.test.csx
   requiredBy: []
   timestamp: '2026-06-03 15:40:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/string/SuffixArray.test.csx
 layout: document
