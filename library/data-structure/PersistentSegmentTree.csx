@@ -21,8 +21,8 @@ public sealed class PersistentSegmentTree<T>
 
     private int _treeSize;
     private int _size;
-    private Monoid<T> _operator;
-    private Monoid<T> _update;
+    private Monoid _operator;
+    private Monoid _update;
     private T _identity;
     private List<Node> _snapshots;
 
@@ -30,7 +30,7 @@ public sealed class PersistentSegmentTree<T>
     public int TreeSize => _treeSize;
     public T Identity => _identity;
 
-    public PersistentSegmentTree(int n, Monoid<T> op, Monoid<T> update, T identity)
+    public PersistentSegmentTree(int n, Monoid op, Monoid update, T identity)
     {
         _size = n;
         _treeSize = 2 * _size - 1;
